@@ -8,6 +8,6 @@ class Profile < ApplicationRecord
   validates :department, presence: true, inclusion: { in: ["HUMAN RESOURCES","MARKETING/PROMOTION","PRODUCTION","SALES","CUSTOMER SERVICE SUPPORT","ACCOUNTING AND FINANCE","DISTRIBUTION","RESEARCH AND DEVELOPMENT","ADMINISTRATIVE AND MANAGEMENT","OPERATIONS","INFORMATION TECHNOLOGY SUPPORT","PURCHASING","LEGAL DEPARTMENT"] }
   validates :location, presence: true
   validates :description, presence: true
-  validates :admin, default: false
+  validates :admin, presence: true
 
 end
