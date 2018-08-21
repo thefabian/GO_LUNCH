@@ -16,7 +16,6 @@ header.masthead {
 }
 
 
-
 header.masthead hr {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -48,3 +47,29 @@ header.masthead p {
   opacity: 0.7;
   cursor: pointer;
 }
+
+
+.banner-lp {
+    color: white;
+    text-align: center;
+    min-height: 300px;
+    height: 600px;
+    width: auto;
+    background-image: url(https://images.unsplash.com/photo-1521528065499-923280d4f231?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ac79ba2762db375e7ec68a956ad56d9&auto=format&fit=crop&w=2550&q=80);
+    background-position: top center;
+    background-size: cover !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+

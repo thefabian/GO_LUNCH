@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GoLunch</title>
+    <meta description="Set up a lunch with GoLunch and meet your awesome colleagues" >
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %>
+  </head>
+
+  <body style="padding-top: 70px; position: relative;" data-spy="scroll" data-target="#navbar-home">
+    <%= render 'shared/home_navbar' %>
+    <%= render 'shared/flashes' %>
+
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= render 'shared/footer' %>
+  </body>
+</html>
