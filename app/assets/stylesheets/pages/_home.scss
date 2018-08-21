@@ -1,2 +1,50 @@
 // Specific CSS for your home-page
+header.masthead {
+  padding-top: 30px;
+  height: calc(100vh - 70px - 100px);
+  background-image: url("https://images.unsplash.com/photo-1525423186417-45cade1b79c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8628e1280fa3a900ea39136026ef75d0&auto=format&fit=crop&w=2189&q=80");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
 
+}
+
+
+
+header.masthead hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+header.masthead h1 {
+  font-size: 4rem;
+  color: white;
+
+}
+
+header.masthead p {
+  font-weight: 300;
+
+}
+
+
+
+
+.banner-content {
+  padding: px;
+
+
+
+}
+
+.banner-content:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
