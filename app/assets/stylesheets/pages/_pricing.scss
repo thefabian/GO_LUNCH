@@ -1,0 +1,38 @@
+thead {
+  font-family: "Open Sans";
+}
+
+tbody {
+  font-family: "Open Sans";
+}
+
+.price-categories {
+  font-size: 23px;
+}
+
+.price-categories-num{
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6 {
+  padding: 19px;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.price-categories-price{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.title {
+  font-size: 13px;
+}
