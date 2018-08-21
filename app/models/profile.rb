@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :company
 
   validates :first_name, presence: true
@@ -9,5 +11,4 @@ class Profile < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true
   validates :admin, presence: true
-
 end

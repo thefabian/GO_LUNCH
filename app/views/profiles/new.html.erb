@@ -14,11 +14,13 @@
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <div class="form-inputs" id="setup">
             <%= simple_form_for @profile do |f| %>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
             <div class="col-xs-12 col-sm-6" id="name-1">
-            <%= f.input :first_name, placeholder: "First Name", as: :string %>
+              <%= f.input :first_name, placeholder: "First Name", as: :string %>
             </div>
             <div class="col-xs-12 col-sm-6" id="name-2">
-            <%= f.input :last_name, placeholder: "Last Name", as: :string %>
+              <%= f.input :last_name, placeholder: "Last Name", as: :string %>
             </div>
             <%= f.input :job_title, placeholder: 'Job Title' %>
             <%= f.input :department, collection: (1..3), class: "collection_form", prompt: "Department" %>
