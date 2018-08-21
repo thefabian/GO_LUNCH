@@ -3,6 +3,8 @@ ruby '2.4.4'
 
 gem "pundit"
 
+gem 'cloudinary'
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
