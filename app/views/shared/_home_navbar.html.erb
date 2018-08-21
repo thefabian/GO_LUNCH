@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon" >
   <div class="navbar-wagon-left">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -47,12 +47,14 @@
       </div>
     </div>
     <% else %>
-    <div class="nav">
-      <a href="" class="navbar-wagon-item navbar-wagon-link">How it works</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Benefits</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Locations</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">FAQ</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Help</a>
+    <div id="navbar-home">
+      <ul class="nav nav-pills">
+        <li><a href="#how-it-works" class="navbar-wagon-item navbar-wagon-link" role="navigation">How it works</a></li>
+        <li><a href="#benefits" class="navbar-wagon-item navbar-wagon-link" role="navigation">Benefits</a></li>
+        <li><a href="" class="navbar-wagon-item navbar-wagon-link" role="navigation">Locations</a></li>
+        <li><a href="#faq" class="navbar-wagon-item navbar-wagon-link" role="navigation">FAQ</a></li>
+        <li><a href="" class="navbar-wagon-item navbar-wagon-link" role="navigation">Help</a></li>
+      </ul>
     </div>
 
     <!-- Login link (when logged out) -->
