@@ -100,9 +100,10 @@
   border-top: 1px solid #E6E6E6;
 }
 .navbar-wagon-button {
-  border: 1px solid #00b6b6;
-  border-radius: 8px;
-  color: #00b6b6;
+  background: #00a0e1;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #ffffff;
   font-size: 14px;
   letter-spacing: .4px;
   padding: 10px 15px;
@@ -110,13 +111,11 @@
   transition: all .3s ease-in-out;
 }
 .navbar-wagon-button:hover {
-  color: white;
+  color: #00a0e1;
   text-decoration: none;
-  background-color: #00b6b6;
-  text-decoration: none;
-  color: white;
+  background-color: #ffffff;
+  border-color: #00628a;
 }
-
 #banner-typed-text {
   color: grey;
   font-weight: lighter;
