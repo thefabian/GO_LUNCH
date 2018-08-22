@@ -15,9 +15,10 @@ class ProfilesController < ApplicationController
   end
 
 
-  # def show
-  #   @profile = Profile.find(params[:id])
-  # end
+  def show
+    @profile = Profile.find(params[:id])
+    @request = Request.new
+  end
 
   private
 

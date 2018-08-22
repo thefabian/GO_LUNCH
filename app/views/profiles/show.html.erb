@@ -141,3 +141,26 @@
 
   <script src="/plugins/bootstrap-pager.js"></script>
 </div>
+
+<div id="fillform"></div>
+
+  <%= simple_form_for [@profile, @request], method: :post do |t| %>
+
+  <div class="col-xs-12 col-sm-5" style="padding-right: 0px; border-right: 0px solid #f4f4f4;">
+    <%= t.input :date, placeholder: "Date", as: :string, input_html: { id: "start_date" } %>
+  </div>
+
+  <div class="col-xs-12 col-sm-7" style="padding-left: 0px; background-color: #f4f4f4;">
+    <%= t.input :location, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
+  </div>
+
+  <div class="col-xs-12 col-sm-12">
+    <%= t.input :kind, placeholder: "Category", collection: ["Delivery", "Restaurant", "Cafeteria"], class: "collection_form", prompt: "Select Lunch Category" %>
+  </div>
+
+  <div class="col-xs-12 col-sm-12">
+    <%=  t.submit "Request Lunch", class: "btn btn-primary", id: "btt" %>
+  </div>
+
+  <% end %>
+</div>
