@@ -2,7 +2,7 @@
   <div class="navbar-wagon-left">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= cl_image_tag("GetWet") %>
+    <%= cl_image_tag("GoLunch") %>
     <% end %>
 
   </div>
@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "Pools", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Pricing", "#", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
@@ -56,7 +56,7 @@
     </div>
 
     <!-- Login link (when logged out) -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "login-link" %>
 
     <!-- Signup link -->
     <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-button" %>

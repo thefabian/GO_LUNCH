@@ -2,7 +2,7 @@
   <div class="navbar-wagon-left">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= cl_image_tag("GetWet") %>
+    <%= cl_image_tag("GoLunch") %>
     <% end %>
 
   </div>
@@ -13,8 +13,8 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "Pools", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Pricing", pricing_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Lunches", "#", class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Avatar with dropdown menu -->
