@@ -34,8 +34,8 @@
               <%= f.input :last_name, placeholder: "Last Name", as: :string %>
             </div>
             <%= f.input :job_title, placeholder: 'Job Title' %>
-            <%= f.input :department, collection: (1..3), class: "collection_form", prompt: "Department" %>
-            <%= f.input :location, collection: (1..3), class: "collection_form", prompt: "Location" %>
+            <%= f.input :department, collection: ["HUMAN RESOURCES","MARKETING/PROMOTION","PRODUCTION","SALES","CUSTOMER SERVICE SUPPORT","ACCOUNTING AND FINANCE","DISTRIBUTION","RESEARCH AND DEVELOPMENT","ADMINISTRATIVE AND MANAGEMENT","OPERATIONS","INFORMATION TECHNOLOGY SUPPORT","PURCHASING","LEGAL DEPARTMENT"], class: "collection_form", prompt: "Department" %>
+            <%= f.input :location, collection: ["Berlin", "Düsseldorf", "Frankfurt", "Hamburg", "Köln", "München", "Nürnberg", "Stuttgart"], class: "collection_form", prompt: "Location" %>
             <%= f.input :description, placeholder: 'Description' %>
           </div>
           <div class="form-actions">
