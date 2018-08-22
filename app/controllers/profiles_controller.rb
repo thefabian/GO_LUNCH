@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path(@profile)
     else
-      redirect_to home_path
+      render :new
     end
   end
 
