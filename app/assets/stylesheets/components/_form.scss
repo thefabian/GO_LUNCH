@@ -2,7 +2,7 @@
   padding-left: 5px;
   padding-right: 5px;
   margin: 0px;
-  text-decoration: none;
+  // text-decoration: none;
   font-size: 0px;
   background-color: #f4f4f4;
   border-radius: 2px;
@@ -105,5 +105,50 @@ input[type="checkbox"] {
   margin-right: 0px !important;
   padding-left: 5px !important;
   padding-right: 0px !important;
+}
+
+.collection_check_boxes {
+  font-size: 10px !important;
+}
+
+.form-check {
+  text-align: left;
+  padding: 1px 12px;
+}
+
+.form-check-input {
+  height: 11px !important;
+}
+
+legend {
+  border-bottom: 0px solid #e5e5e5 !important;
+  text-align: left;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 6px 12px;
+  margin: 0px;
+}
+
+.avatar {
+  width: 90px;
+  border-radius: 50%;
+  height: 90px;
+  border: 1px solid #e5e5e5 !important;
+}
+
+.avatar-icon {
+  font-size: 90px !important;
+}
+
+.company-logo {
+  width: 90px;
+  border-radius: 5%;
+  height: 90px;
+  border: 1px solid #e5e5e5 !important;
+  margin-bottom: 20px;
+}
+
+.company-placeholder {
+  font-size: 90px !important;
 }
 
