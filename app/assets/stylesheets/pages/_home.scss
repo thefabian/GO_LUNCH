@@ -34,18 +34,20 @@ header.masthead p {
 }
 
 
-
+.btn-primary {
+  border: 0px !important;
+}
 
 .banner-content {
   padding: px;
-
-
-
+  border: 0px solid white !important;
+  opacity: 0.95;
 }
 
 .banner-content:hover {
-  opacity: 0.7;
+  opacity: 0.95;
   cursor: pointer;
+  border: 0px !important;
 }
 
 
@@ -70,6 +72,18 @@ header.masthead p {
     position: relative;
 }
 
+.mx-auto h1{
+  letter-spacing: 3px;
+  font-size: 50px !important;
+}
 
+.mx-auto h4{
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: normal;
+}
+
+.section-heading {
+  letter-spacing: 3px;
+}
 
 
