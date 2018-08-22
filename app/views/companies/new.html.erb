@@ -1,0 +1,52 @@
+<div class="grey-wrapper">
+  <div class="container login-container text-center">
+    <div id="signup">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="header-line">
+            <p class="header-line">
+              <span>SETUP YOUR COMPANY</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="form-inputs" id="setup">
+            <%= simple_form_for @company do |f| %>
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+              <% if current_user.photo.blank? %>
+                <div class="company-placeholder">
+                  <i class="fas fa-image"></i>
+                </div>
+              <% else %>
+                <%= cl_image_tag current_user.photo, class: "company-logo" %>
+              <% end %>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden, placeholder: "Upload your Company Logo" %>
+            </div>
+            <%= f.input :name, placeholder: "Name", as: :string %>
+            <%= f.input :email, placeholder: "Email" %>
+            <%= f.input :address, placeholder: "Address", as: :string %>
+            <%= f.input :locations, placeholder: 'Locations' %>
+            <%= f.input :departments, required: false, as: :check_boxes, collection: ["HUMAN RESOURCES","MARKETING/PROMOTION","PRODUCTION","SALES","CUSTOMER SERVICE SUPPORT","ACCOUNTING AND FINANCE","DISTRIBUTION","RESEARCH AND DEVELOPMENT","ADMINISTRATIVE AND MANAGEMENT","OPERATIONS","INFORMATION TECHNOLOGY SUPPORT","PURCHASING","LEGAL DEPARTMENT"], class: "collection_form", prompt: "Department" %>
+            <%= f.input :employee, collection: ["Employees 1-50", "Employees 51-200", "Employees 201-1,000", "Employees 1,001-5,000", "Employees 5000+"], class: "collection_form", prompt: "Employee range" %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Create company", :class => "button btn btn-primary" %>
+          </div>
+          <div class="divider">
+            <hr>
+          </div>
+          <%= link_to "", profiles_path, class: 'fas fa-backward' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
