@@ -2,13 +2,12 @@
 <div class="container target">
     <div class="row">
         <div class="col-sm-10">
-          <h1 class="">max lorem </h1>
-             <!-- <h1 class=""><%#=current_user.profile_first_name current_user.profile_last_name%> </h1> -->
+             <h1 class=""><%= @profile.first_name %> <%= @profile.last_name  %> </h1>
 
 
 <br>
         </div>
-      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://wow.zamimg.com/uploads/screenshots/small/716992.jpg"></a>
+      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src= <%= @profile.photo %>> </a>
 
         </div>
     </div>
@@ -18,9 +17,9 @@
             <!--left col-->
             <ul class="list-group">
                 <li class="list-group-item text-muted" contenteditable="false">Company</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">location</strong></span> lorem</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">job title</strong></span> lorem</li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">department </strong></span>lorrem</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">location</strong></span>  <%= @profile.location  %></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">job title</strong></span> <%= @profile.job_title %> </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">department </strong></span><%= @profile.department  %></li>
 
             </ul>
            <div class="panel panel-default">
@@ -108,8 +107,8 @@
 
     </div>
            <div class="panel panel-default">
-                <div class="panel-heading">Max Lorem</div>
-                <div class="panel-body"> A long description about me.
+                <div class="panel-heading"><%= @profile.first_name %> <%= @profile.last_name  %> </div>
+                <div class="panel-body"> <%= @profile.description %>
 
                 </div>
 </div></div>

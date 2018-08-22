@@ -14,16 +14,15 @@ class ProfilesController < ApplicationController
     end
   end
 
-
   def show
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find_by(user: current_user)
     @request = Request.new
   end
 
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :job_title, :department, :location, :description, :photo)
+    params.require(:profile).permit(:first_name, :last_name, :job_title, :department, :location, :description, :photo, :user_id, :email )
   end
 
 end
