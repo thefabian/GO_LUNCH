@@ -36,6 +36,10 @@ header.masthead p {
   border: 0px !important;
 }
 
+#btn-landing {
+  margin-top: 70px;
+}
+
 .banner-content {
   padding: px;
   border: 0px solid white !important;
@@ -54,7 +58,7 @@ header.masthead p {
     text-align: center;
     min-height: 300px;
     height: 700px;
-    width: auto;
+    width: 100%;
     background-image: linear-gradient(-225deg, rgba(135,48,0,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1508834633996-7ca4bc707cf8?ixlib=rb-0.3.5&s=4baedd8ba171668fa44dee512a37cb25&auto=format&fit=crop&w=1030&q=80);
     background-position: top center;
     background-size: cover !important;
@@ -91,8 +95,29 @@ header.masthead p {
     text-align: center;
     min-height: 300px;
     height: 700px;
-    width: auto;
+    width: 100%;
     background-image: linear-gradient(-225deg, rgba(135,48,0,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1fe18e6fdfabd9a43474c9ad3d2255b4&auto=format&fit=crop&w=1050&q=80);
+    background-position: top center;
+    background-size: cover !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner-help {
+    color: white;
+    text-align: center;
+    min-height: 300px;
+    height: 700px;
+    width: 100%;
+    background-image: linear-gradient(-225deg, rgba(135,48,0,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1418225162054-0f773a996f9e?ixlib=rb-0.3.5&s=3a2bd5572432b45991f5059ab2b58ad7&auto=format&fit=crop&w=1058&q=80);
     background-position: top center;
     background-size: cover !important;
     display: -webkit-box;
@@ -119,9 +144,11 @@ header.masthead p {
 #benefits {
   color: #484848 !important;
   height: calc(800px - 70px - 100px);
+  margin-bottom: 70px;
 }
 
 #how-it-works {
+  padding-top: 70px;
   color: #484848 !important;
   height: calc(800px - 70px - 100px);
 }
@@ -129,12 +156,21 @@ header.masthead p {
 #faq {
   color: #484848 !important;
   height: calc(800px - 70px - 100px);
+  margin-bottom: 70px;
+  padding-top: 70px;
 }
 
-.panel-body {
+#help {
+  padding-top: 70px;
+  color: #484848 !important;
+  height: calc(800px - 70px - 100px);
+}
+
+.panel-body1 {
   color: #ffffff !important;
   background-color: #469AE0;
   text-align: left;
+  padding: 10px;
 }
 
 .panel-title {
@@ -151,6 +187,37 @@ header.masthead p {
   background-color: #f0f0f0 !important;
 }
 
-.arrow {
-  padding-left: 100px;
+.fas.fa-angle-down {
+  float: right !important;
+}
+
+#desc1 {
+  padding-top: 70px;
+  padding-bottom: 35px;
+}
+
+.cust-sup {
+  color: #469AE0 !important;
+}
+
+#help-contact {
+  height: 100px;
+  width: 100px;
+}
+
+#mail-to:hover {
+  text-decoration: none !important;
+  img {
+    width:100px;
+    border: 3px solid #469AE0;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+  }
+  h4 {
+    // color: black !important;
+  }
+  p {
+    // color: black !important;
+  }
 }
