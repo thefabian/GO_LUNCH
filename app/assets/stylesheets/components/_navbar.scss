@@ -3,7 +3,7 @@
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
-  height: 70px;
+  height: 72px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -13,6 +13,7 @@
   width: 100%;
   z-index: 500;
 }
+
 .border-letter h3 span{
   color:  #ffffff;
   border: solid 1px #000000;
@@ -150,3 +151,8 @@
   padding: 25px 15px !important;
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #ffffff;
+  border-bottom: 2px solid #469AE0 !important;
+  border-radius: 0px;
+}

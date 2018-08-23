@@ -2,25 +2,38 @@
 
   <div class="footer-left">
 
-    <%= cl_image_tag("GoLunch", height: 50) %>
-
-    <p class="footer-links">
-      <a href="#">Home</a>
-      ·
-      <a href="#">Pools</a>
-      ·
-      <a href="#">About</a>
-      ·
-      <a href="#">FAQ</a>
-      ·
-      <a href="#">Contact</a>
-    </p>
-
-    <p class="footer-company-name">Copyright &copy; GetWet 2018</p>
+    <ul>
+      <p class="footer-company-about">
+        <span>Go Lunch</span>
+      </p>
+      <p class="footer-links">
+        <li id="footer-li">
+        <a href="#">Home</a>
+        </li>
+        <li id="footer-li">
+        <a href="#how-it-works">How it works</a>
+        </li>
+        <li id="footer-li">
+        <a href="#benefits">Benefits</a>
+        </li>
+        <li id="footer-li">
+        <a href="#faq">FAQ</a>
+        </li>
+        <li id="footer-li">
+        <a href="#help">Help</a>
+        </li>
+      </p>
+    </ul>
+    <div class="gllogo">
+      <%= cl_image_tag("GoLunch", height: 50) %>
+      <p class="footer-company-name">Copyright &copy; Go Lunch 2018</p>
+    </div>
   </div>
 
   <div class="footer-center">
-
+    <p class="footer-company-about">
+        <span id="contact">Contact</span>
+    </p>
     <div>
       <i class="fa fa-map-marker"></i>
       <p><span>Rudi-Dutschke-Str. 26</span> Berlin, Germany</p>
@@ -31,9 +44,9 @@
       <p>+49 123 4567 890</p>
     </div>
 
-    <div>
+    <div id="bluee">
       <i class="fa fa-envelope"></i>
-      <p><a href="mailto:get@wet.com">get@wet.com</a></p>
+      <p><a href="mailto:get@wet.com">info@golunch.net</a></p>
     </div>
 
   </div>
@@ -41,11 +54,11 @@
   <div class="footer-right">
 
     <p class="footer-company-about">
-      <span>About the GetWet</span>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quo minus cupiditate maxime at sequi aperiam optio laudantium illo saepe suscipit odit, ducimus placeat rem tempora modi, numquam. Quos, velit.
+      <span>About Go Lunch</span>
+      Go Lunch began in 2018. We realized that it was near impossible for the average Jane or Joe to meet colleagues from different departments within the company they were working. Today, we're proud to empower individuals build up networks and improve the working atmosphere throughout firms and societies.
     </p>
 
-    <div class="footer-icons">
+    <div class="footer-icons" id="bluee" >
 
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
