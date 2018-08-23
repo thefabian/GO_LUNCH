@@ -7,6 +7,10 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
+    @profile.email = current_user.email
+
+    # Rails.logger.info "PROFIL VALID? #{@profile.valid?}"
+    # Rails.logger.info "PROFIL #{@profile.errors.messages}"
     if @profile.save
       redirect_to profile_path(@profile)
     else
@@ -31,7 +35,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :job_title, :department, :location, :description, :photo, :user_id, :email )
+    params.require(:profile).permit(:first_name, :last_name, :job_title, :department, :location, :description, :photo, :user_id, :email, :photo_cache)
   end
 
 end
