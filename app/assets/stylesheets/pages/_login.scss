@@ -50,7 +50,7 @@ p.header-line span {
 }
 .btn-primary {
   background: #00a0e1;
-  border: 1px solid #fff;
+  border: 1px solid #fff !important;
   color: #fff;
   font-size: 14px;
   border-radius: 5px;
@@ -62,6 +62,8 @@ p.header-line span {
   background-color: #ffffff;
   color: #00a0e1;
   text-decoration: none;
+  border: 1px solid !important;
+  border-color: #00a0e1 !important;
 }
 .text-margin {
   margin: 15px 0;

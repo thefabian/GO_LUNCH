@@ -38,117 +38,115 @@
   </ul>
   <div class="panel panel-default">
     <div class="panel-heading">Social Media</div>
-    <div class="panel-body">  <i class="fa fa-facebook fa-2x"></i>  <i class="fa fa-github fa-2x"></i>
-      <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i>  <i class="fa fa-google-plus fa-2x"></i>
+    <div class="panel-body">
+      <i class="fab fa-facebook fa-2x"></i>
+      <i class="fab fa-github fa-2x"></i>
+      <i class="fab fa-twitter fa-2x"></i>
+      <i class="fab fa-pinterest fa-2x"></i>
+      <i class="fab fa-google-plus fa-2x"></i>
 
     </div>
   </div>
 </div>
 <!--/col-3-->
 <div class="col-sm-9" style="" contenteditable="false">
-  <button type="button" class="btn btn-success">Match me</button>
-  <div class="panel panel-default target">
-    <div class="panel-heading" contenteditable="false">last lunches</div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <img alt="300x200" src="https://source.unsplash.com/300x200/?dinner">
-            <div class="caption">
-              <h3>
-                Rover
-              </h3>
-              <p>
-                was great!
-              </p>
-              <p>
 
-              </p>
-            </div>
+  <div class="row">
+    <!--     <div class="col-xs-12 col-sm-9 col-sm-offset-3"> -->
+      <div class="form-post">
+        <h1>New Lunch Request</h1>
+        <%= simple_form_for [@profile, @request], method: :post do |t| %>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= t.input :location, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
+          </div>
+          <div class="col-xs-6">
+            <%= t.input :kind, placeholder: "Category", collection: ["Delivery", "Restaurant", "Cafeteria"], class: "collection_form", prompt: "Select Lunch Category" %>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <img alt="300x200" src="https://source.unsplash.com/300x200/?lunch">
-            <div class="caption">
-              <h3>
-                Marmaduke
-              </h3>
-              <p>
-                Had a good conversation about air travel.
-              </p>
-              <p>
-
-              </p>
-            </div>
+        <!-- Inject categories here -->
+        <div class="form-group">
+          <label class="control-label check_boxes optional">Categories</label>
+          <!-- <input type="hidden" name="post" value=""> -->
+          <div class="day-choices">
+            <% @next_days.each do |day| %>
+            <input type="checkbox" class="hidden" value="<%= day %>" name="day[]" id="post_days_<%= day %>">
+            <label class="day-choice" for="post_days_<%= day %>">
+              <%= day.strftime("%a") %>
+              <br>
+              <%= day.strftime("%b %d") %>
+            </label>
+            <% end %>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <img alt="300x200" src="https://source.unsplash.com/300x200/?breakfast">
-            <div class="caption">
-              <h3>
-                Rocky
-              </h3>
-              <p>
-                Loved the food learned a lot about marketing.
-              </p>
-              <p>
-
-              </p>
-            </div>
-          </div>
-
-        </div>
-
+        <%=  t.submit "Request Lunch", class: "btn btn-primary btn-block", id: "btt" %>
+        <% end %>
       </div>
 
+      <div class="panel panel-default target">
+        <div class="panel-heading" contenteditable="false">last lunches</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img alt="300x200" src="https://source.unsplash.com/300x200/?dinner">
+                <div class="caption">
+                  <h3>
+                    Rover
+                  </h3>
+                  <p>
+                    was great!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img alt="300x200" src="https://source.unsplash.com/300x200/?lunch">
+                <div class="caption">
+                  <h3>
+                    Marmaduke
+                  </h3>
+                  <p>
+                    Had a good conversation about air travel.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img alt="300x200" src="https://source.unsplash.com/300x200/?breakfast">
+                <div class="caption">
+                  <h3>
+                    Rocky
+                  </h3>
+                  <p>
+                    Loved the food learned a lot about marketing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading"><%= @profile.first_name %> <%= @profile.last_name  %></div>
+        <div class="panel-body"> <%= @profile.description %></div>
+      </div>
     </div>
-
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading"><%= @profile.first_name %> <%= @profile.last_name  %> </div>
-    <div class="panel-body"> <%= @profile.description %>
-
-    </div>
-  </div></div>
-
-
-  <div id="push"></div>
 </div>
-  <div class="row-fluid">
-    <div class="span3">
-      <p>
-        <a href="http://twitter.com/Bootply" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
-        <a href="https://plus.google.com/+Bootply" rel="publisher">Google+</a><br>
-        <a href="http://facebook.com/Bootply" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
-        <a href="https://github.com/iatek/bootply" title="Bootply on GitHub" target="ext">GitHub</a><br>
-      </p>
-    </div>
-  </div>
-
-<div id="fillform"></div>
-
-<%= simple_form_for [@profile, @request], method: :post do |t| %>
-
-<div class="col-xs-12 col-sm-5" style="padding-right: 0px; border-right: 0px solid #f4f4f4;">
-  <%= t.input :date, placeholder: "Date", as: :string, input_html: { id: "start_date" } %>
 </div>
 
-<div class="col-xs-12 col-sm-7" style="padding-left: 0px; background-color: #f4f4f4;">
-  <%= t.input :location, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
-</div>
 
-<div class="col-xs-12 col-sm-12">
-  <%= t.input :kind, placeholder: "Category", collection: ["Delivery", "Restaurant", "Cafeteria"], class: "collection_form", prompt: "Select Lunch Category" %>
-</div>
 
-<div class="col-xs-12 col-sm-12">
-  <%=  t.submit "Request Lunch", class: "btn btn-primary", id: "btt" %>
-</div>
 
-<% end %>
-</div>
 
-</div>
+
+
+
+
+
+
+
 

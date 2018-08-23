@@ -17,6 +17,15 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find_by(user: current_user)
     @request = Request.new
+    @next_days = []
+    counter = 0
+    7.times do
+      day = Date.tomorrow + counter
+      unless day.saturday? || day.sunday?
+        @next_days << day
+      end
+      counter += 1
+    end
   end
 
   private
