@@ -38,8 +38,12 @@
   </ul>
   <div class="panel panel-default">
     <div class="panel-heading">Social Media</div>
-    <div class="panel-body">  <i class="fa fa-facebook fa-2x"></i>  <i class="fa fa-github fa-2x"></i>
-      <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i>  <i class="fa fa-google-plus fa-2x"></i>
+    <div class="panel-body">
+      <i class="fab fa-facebook fa-2x"></i>
+      <i class="fab fa-github fa-2x"></i>
+      <i class="fab fa-twitter fa-2x"></i>
+      <i class="fab fa-pinterest fa-2x"></i>
+      <i class="fab fa-google-plus fa-2x"></i>
 
     </div>
   </div>
@@ -63,12 +67,14 @@
         <!-- Inject categories here -->
         <div class="form-group">
           <label class="control-label check_boxes optional">Categories</label>
-          <input type="hidden" name="post" value="">
-          <div class="category-choices">
+          <!-- <input type="hidden" name="post" value=""> -->
+          <div class="day-choices">
             <% @next_days.each do |day| %>
-            <input type="checkbox" class="hidden" value="<%= day %>" name="post" id="post_category_ids_<%= day %>">
-            <label class="category-choice" for="post_category_ids_<%= day %>">
-              <%= day %>
+            <input type="checkbox" class="hidden" value="<%= day %>" name="day[]" id="post_days_<%= day %>">
+            <label class="day-choice" for="post_days_<%= day %>">
+              <%= day.strftime("%a") %>
+              <br>
+              <%= day.strftime("%b %d") %>
             </label>
             <% end %>
           </div>
