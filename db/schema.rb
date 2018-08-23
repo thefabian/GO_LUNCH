@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_094917) do
+ActiveRecord::Schema.define(version: 2018_08_23_160302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "request_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_availabilities_on_request_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -30,19 +38,18 @@ ActiveRecord::Schema.define(version: 2018_08_22_094917) do
     t.datetime "date"
     t.string "location"
     t.string "kind"
-    t.bigint "user_1_id"
-    t.bigint "user_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_1_id"], name: "index_lunches_on_user_1_id"
-    t.index ["user_2_id"], name: "index_lunches_on_user_2_id"
+    t.bigint "request_1_id"
+    t.bigint "request_2_id"
+    t.index ["request_1_id"], name: "index_lunches_on_request_1_id"
+    t.index ["request_2_id"], name: "index_lunches_on_request_2_id"
   end
 
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "job_title"
-    t.string "email"
     t.string "department"
     t.string "location"
     t.text "description"
@@ -81,8 +88,9 @@ ActiveRecord::Schema.define(version: 2018_08_22_094917) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "lunches", "users", column: "user_1_id"
-  add_foreign_key "lunches", "users", column: "user_2_id"
+  add_foreign_key "availabilities", "requests"
+  add_foreign_key "lunches", "requests", column: "request_1_id"
+  add_foreign_key "lunches", "requests", column: "request_2_id"
   add_foreign_key "profiles", "companies"
   add_foreign_key "profiles", "users"
   add_foreign_key "requests", "lunches"

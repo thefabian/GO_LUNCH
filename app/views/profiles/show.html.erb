@@ -70,7 +70,7 @@
           <!-- <input type="hidden" name="post" value=""> -->
           <div class="day-choices">
             <% @next_days.each do |day| %>
-            <input type="checkbox" class="hidden" value="<%= day %>" name="day[]" id="post_days_<%= day %>">
+            <input type="checkbox" class="hidden" value="<%= day %>" name="request[date][]" id="post_days_<%= day %>">
             <label class="day-choice" for="post_days_<%= day %>">
               <%= day.strftime("%a") %>
               <br>
