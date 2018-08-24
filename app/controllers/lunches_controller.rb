@@ -5,8 +5,9 @@ class LunchesController < ApplicationController
 
   def create
     @lunch = Lunch.new(lunch_params)
-    @lunch.request_1 = request.current_user_id
-    @lunch.request_2 = request.find_matching_requests
+    @request = Request.find_by(user :current_user)
+    @lunch.request_1 = @request.current_user.id
+    @lunch.request_2 = @request.find_matching_requests
     if @lunch.save
       redirect_to lunch_path(@lunch)
     else

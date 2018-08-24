@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get "conformation", to: "pages#conformation"
   resources :companies, only: [ :new, :create, :show ]
   resources :profiles, only: [ :new, :create, :show ] do
-    resources :requests, only: [ :new, :create ]
+    resources :requests, only: [ :new, :create, :show ]
   end
 end
