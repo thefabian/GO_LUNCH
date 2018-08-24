@@ -4,7 +4,6 @@ ruby '2.4.4'
 gem "pundit"
 
 gem 'carrierwave', '~> 1.2'
-
 gem 'cloudinary'
 
 gem 'bootsnap', require: false
