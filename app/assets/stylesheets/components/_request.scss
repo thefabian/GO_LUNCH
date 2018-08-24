@@ -2,14 +2,18 @@
   background: white;
   padding: 20px;
   border-radius: 5px;
+  border: 1px solid #e9e9e9;
+  color: #484848;
   margin-bottom: 25px;
   h1 {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
-    color: #000000;
+    color: #484848;
     margin-bottom: 50px;
     margin-top: 0px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   .btn {
     width: 100%;
@@ -34,12 +38,43 @@
   flex: 0 0 19%;
   text-align: center;
   &:hover {
-    opacity: 1;
+    transition: 0.8s;
+    background-color: rgba(100,219,146, 1.0);
+    color: #2E6A68 !important;
     cursor: pointer;
+    i {
+      color: #2E6A68 !important;
+    }
   }
   &.active {
   background: $brand-primary;
-  color: white;
+  color: white !important;
   opacity: 1;
+    i {
+      color: white !important;
+    }
   }
 }
+
+.form-match {
+  font-size: 0px;
+}
+
+
+.form-control {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0) !important;
+}
+
+.form-control:hover {
+  border: 1px solid #469AE0;
+}
+
+#select-date {
+  text-transform: uppercase;
+}
+
+#check {
+  color: #b7b7b7;
+}
+
+

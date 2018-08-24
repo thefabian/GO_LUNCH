@@ -49,16 +49,16 @@ profiles = Profile.create!(
 )
 
 
-(
-first_name: "Bruce",
-  last_name: 'Willis',
-  company: company,
-  job_title: "coder",
-  department: 'OPERATIONS',
-  location: 'himmel',
-  description: 'Walter Bruce Willis (born March 19, 1955) is an American actor, producer, and singer. Born to a German mother and American father in Idar-Oberstein, West Germany, his career began on the Off-Broadway stage and then in television in the 1980s, most notably as David Addison in Moonlighting (1985–1989).',
-  user_id: user_3.id,
-  remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Bruce_Willis_by_Gage_Skidmore_3.jpg/440px-Bruce_Willis_by_Gage_Skidmore_3.jpg",
-  admin: true,)
+# (
+# first_name: "Bruce",
+#   last_name: 'Willis',
+#   company: company,
+#   job_title: "coder",
+#   department: 'OPERATIONS',
+#   location: 'himmel',
+#   description: 'Walter Bruce Willis (born March 19, 1955) is an American actor, producer, and singer. Born to a German mother and American father in Idar-Oberstein, West Germany, his career began on the Off-Broadway stage and then in television in the 1980s, most notably as David Addison in Moonlighting (1985–1989).',
+#   user_id: user_3.id,
+#   remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Bruce_Willis_by_Gage_Skidmore_3.jpg/440px-Bruce_Willis_by_Gage_Skidmore_3.jpg",
+#   admin: true,)
 
 puts "You have created #{Profile.count} profiles."
