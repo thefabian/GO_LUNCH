@@ -1,0 +1,107 @@
+.backgroundconforamtion {
+  background-image: url("https://images.unsplash.com/photo-1517870662726-c1d98ee36250?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d7a6694130f46dc58587231975022d70&auto=format&fit=crop&w=2250&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+
+.headline{
+  color: white;
+}
+
+.conformationcontainer {
+  width: 400px;
+  margin: 120px auto 120px;
+  background-color: #fff;
+  padding: 0 20px 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  text-align: center;
+}
+// .container:hover .avatar-flip {
+//   transform: rotateY(180deg);
+//   -webkit-transform: rotateY(180deg);
+// }
+.conformationcontainer:hover .avatar-flip img:first-child {
+  opacity: 0;
+}
+.conformationcontainer:hover .avatar-flip img:last-child {
+  opacity: 1;
+}
+.avatar-flip {
+  border-radius: 100px;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  margin: auto;
+  top: -60px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 13px #f0f0f0;
+  -webkit-box-shadow: 0 0 0 13px #f0f0f0;
+  -moz-box-shadow: 0 0 0 13px #f0f0f0;
+}
+
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 5s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+// .avatar-flip img {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   border-radius: 100px;
+//   transition: all 0.3s ease-in-out;
+//   -webkit-transition: all 0.3s ease-in-out;
+//   -moz-transition: all 0.3s ease-in-out;
+// }
+// .avatar-flip img:first-child {
+//   z-index: 1;
+// }
+// .avatar-flip img:last-child {
+//   z-index: 0;
+//   transform: rotateY(180deg);
+//   -webkit-transform: rotateY(180deg);
+//   opacity: 0;
+// }
+// h2 {
+//   font-size: 32px;
+//   font-weight: 600;
+//   margin-bottom: 15px;
+//   color: #333;
+// }
+// h4 {
+//   font-size: 13px;
+//   color: #00baff;
+//   letter-spacing: 1px;
+//   margin-bottom: 25px
+// }
+// p {
+//   font-size: 16px;
+//   line-height: 26px;
+//   margin-bottom: 20px;
+//   color: #666;
+// }
