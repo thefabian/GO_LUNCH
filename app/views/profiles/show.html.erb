@@ -40,11 +40,11 @@
       </div>
     </div>
     </a>
-    <div class="col-sm-8 col-sm-offset-4" style="margin-top: -570px;" contenteditable="false">
+    <div class="col-sm-8 col-sm-offset-4" style="margin-top: -843px;" contenteditable="false">
       <div class="row">
         <div class="form-post">
           <h1>New Lunch Request</h1>
-          <%= simple_form_for [@profile, @request], method: :get, url: profile_path do |t| %>
+          <%= simple_form_for [@profile, @request], method: :get, url: conformation_path do |t| %>
           <div class="row">
             <div class="col-xs-6 form-match" id="input-req">
               <%= t.input :location, required: false, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
