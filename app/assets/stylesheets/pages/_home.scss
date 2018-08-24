@@ -2,13 +2,13 @@
 header.masthead {
   padding-top: 30px;
   height: calc(800px - 70px - 100px);
-  background-image: linear-gradient(-225deg, rgba(135,48,0,0.6) 0%, rgba(0,36,61,0.6) 50%), url("https://images.unsplash.com/photo-1523029887627-f6c9879eacaf?ixlib=rb-0.3.5&s=39f69619734a85da8461e72ba749943e&auto=format&fit=crop&w=1050&q=80");
+  background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url("https://images.unsplash.com/photo-1523029887627-f6c9879eacaf?ixlib=rb-0.3.5&s=39f69619734a85da8461e72ba749943e&auto=format&fit=crop&w=1050&q=80");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-   align-items: center;
+  align-items: center;
   justify-content: center;
   text-align: center;
   display: flex;
@@ -37,7 +37,25 @@ header.masthead p {
 }
 
 #btn-landing {
-  margin-top: 70px;
+  margin-top: 180px;
+  width: 260px;
+  height: 58px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  letter-spacing: 2px;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+#btn-landing:hover {
+  transition: 1.3s;
+  background-color: #fff;
+  color: #484848;
+  border: 1px solid #fff !important;
 }
 
 .banner-content {
@@ -220,4 +238,8 @@ header.masthead p {
   p {
     // color: black !important;
   }
+}
+
+.panel-title {
+  cursor: pointer;
 }
