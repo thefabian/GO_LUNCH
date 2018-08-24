@@ -1,54 +1,50 @@
 <div class="container target" id="profile-container">
- <div class="row">
-  <div id="profile-card">
-    <hr>
-    <div class="user-pic">
+  <div class="row">
+    <div id="profile-card">
+      <hr>
+      <div class="user-pic">
       <a href="/users" class="avatar-user">
         <%= cl_image_tag(@profile.photo, :transformation=>[
-          {:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-          ]) %>
-        </a>
+        {:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+        ]) %>
       </div>
       <div class="pen">
-       <i class="fas fa-pen"></i>
-     </div>
-     <div class="">
-       <h3 id="profile-name"><%= @profile.first_name %> <%= @profile.last_name  %></h3>
-     </div>
-     <!--left col-->
-     <ul class="list-group">
-      <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p>Company</p></li>
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">location</strong></span><span id="right-side"><%= @profile.location%></span></p></li>
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">job title</strong></span><span id="right-side"> <%= @profile.job_title %></span></p></li>
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">department </strong></span><span id="right-side"><%= @profile.department %></span></p></li>
-    </ul>
-    <hr>
-    <ul>
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunch typ</strong></span><span id="right-side">outside</span></p></li>
-    </ul>
-    <ul class="list-group">
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunches</strong></span><span id="right-side">125</span></p></li>
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">review</strong></span><span id="right-side">13</span></p></li>
-      <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">stars</strong></span><span id="right-side">4</span></p></li>
-    </ul>
-    <hr>
-    <div >
-      <div class="panel-body">
-        <i class="fab fa-facebook fa-3x"></i>
-        <i class="fab fa-linkedin fa-3x"></i>
-        <i class="fab fa-xing-square fa-3x"></i>
-        <i class="fab fa-google-plus fa-3x"></i>
+        <i class="fas fa-pen"></i>
+      </div>
+      <div class="">
+        <h3 id="profile-name"><%= @profile.first_name %> <%= @profile.last_name  %></h3>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p>Company</p></li>
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">location</strong></span><span id="right-side"><%= @profile.location%></span></p></li>
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">job title</strong></span><span id="right-side"> <%= @profile.job_title %></span></p></li>
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">department </strong></span><span id="right-side"><%= @profile.department %></span></p></li>
+      </ul>
+      <hr>
+      <ul>
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunch typ</strong></span><span id="right-side">outside</span></p></li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunches</strong></span><span id="right-side">125</span></p></li>
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">review</strong></span><span id="right-side">13</span></p></li>
+        <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">stars</strong></span><span id="right-side">4</span></p></li>
+      </ul>
+      <hr>
+      <div>
+        <div class="panel-body">
+          <i class="fab fa-facebook fa-3x"></i>
+          <i class="fab fa-linkedin fa-3x"></i>
+          <i class="fab fa-xing-square fa-3x"></i>
+          <i class="fab fa-google-plus fa-3x"></i>
+        </div>
       </div>
     </div>
-  </div>
-  <!--/col-3-->
-  <div class="col-sm-8 col-sm-offset-4" style="margin-top: -570px;" contenteditable="false">
-
-    <div class="row">
-      <!--     <div class="col-xs-12 col-sm-9 col-sm-offset-3"> -->
+    </a>
+    <div class="col-sm-8 col-sm-offset-4" style="margin-top: -570px;" contenteditable="false">
+      <div class="row">
         <div class="form-post">
           <h1>New Lunch Request</h1>
-          <%= simple_form_for [@profile, @request], method: :post do |t| %>
+          <%= simple_form_for [@profile, @request], method: :get, url: profile_path do |t| %>
           <div class="row">
             <div class="col-xs-6 form-match" id="input-req">
               <%= t.input :location, required: false, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
@@ -68,7 +64,7 @@
             <!-- <input type="hidden" name="post" value=""> -->
             <div class="day-choices">
               <% @next_days.each do |day| %>
-              <input type="checkbox" class="hidden" value="<%= day %>" name="request[date][]" id="post_days_<%= day %>">
+              <input type="checkbox" class="hidden" value="<%= day %>" name="day[]" id="post_days_<%= day %>">
               <label class="day-choice" for="post_days_<%= day %>">
                 <%= day.strftime("%a") %>
                 <br>
@@ -82,46 +78,45 @@
           <%=  t.submit "Request Lunch", class: "btn btn-primary btn-block", id: "btt" %>
           <% end %>
         </div>
-
         <div class="form-post" id="reviews">
           <h1>Reviews</h1>
           <div class="col-md-4 review-cards">
-            <div class="thumbnail">
-              <img alt="300x200" src="https://source.unsplash.com/300x200/?lunch">
+            <div class="thumbnail avatar-user">
+              <img alt="300x200" src="https://source.unsplash.com/200x200/?lunch">
               <div class="caption">
                 <h3>
-                  Marmaduke
+                  Uli Hoeneß
                 </h3>
                 <p>
-                  "Had a good conversation about air travel."
+                  "Had a nice conversation about marketing in China."
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-4 review-cards">
-            <div class="thumbnail">
+            <div class="thumbnail avatar-user">
               <div class="caption">
-                <div class="img-review">
-                  <img alt="300x200" src="https://source.unsplash.com/300x200/?lunch">
-                </div>
+              <div class="img-review">
+                <img alt="300x200" src="https://source.unsplash.com/200x200/?dinner">
+              </div>
                 <h3>
-                  Marmaduke
+                  Jupp Heynckes
                 </h3>
                 <p>
-                  "Had a good conversation about air travel."
+                  "One of the best lunches i had in a while"
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-4 review-cards">
-            <div class="thumbnail">
-              <img alt="200x200" src="https://source.unsplash.com/200x200/?lunch">
+            <div class="thumbnail avatar-user">
+              <img alt="200x200" src="https://source.unsplash.com/200x200/?brunch">
               <div class="caption">
                 <h3>
-                  Marmaduke
+                  Niko Kovac
                 </h3>
                 <p>
-                  "Had a good conversation about air travel."
+                  "Enjoyed talking about the Croatian national football team and Luca Modric"
                 </p>
               </div>
             </div>
@@ -129,15 +124,16 @@
         </div>
         <div class="form-post" id="messages">
           <h1>Messages</h1>
-          <div class="row message-cards">
+          <i class="far fa-edit"></i>
+          <div class="row message-cards avatar-user">
             <div class="">
-              <img alt="300x200" src="https://source.unsplash.com/300x200/?portrait">
+              <img alt="300x200" src="https://source.unsplash.com/300x200/?portrait" class="avatar-user">
               <div class="caption">
                 <h3>
-                  Marmaduke
+                  Robert Lewandowski
                 </h3>
                 <p>
-                  "Had a good conversation about air travel."
+                  "Gonna score next game, I promise!"
                 </p>
                 <h4>Mittwoch</h4>
                 <i class="fas fa-angle-right"></i>
@@ -145,17 +141,17 @@
             </div>
           </div>
           <hr>
-          <div class="row message-cards">
+          <div class="row message-cards avatar-user">
             <div class="">
               <div class="caption">
                 <div class="img-review">
-                  <img alt="300x200" src="https://source.unsplash.com/300x200/?portrait">
+                  <img alt="300x200" src="https://source.unsplash.com/300x200/?face">
                 </div>
                 <h3>
-                  Marmaduke
+                  Frank Ribery
                 </h3>
                 <p>
-                  "Had a good conversation about air travel."
+                  "Do you like to lunch sometime soon?"
                 </p>
                 <h4>Dienstag</h4>
                 <i class="fas fa-angle-right"></i>
@@ -163,15 +159,15 @@
             </div>
           </div>
           <hr>
-          <div class="row message-cards">
+          <div class="row message-cards avatar-user">
             <div class="">
-              <img alt="200x200" src="https://source.unsplash.com/200x200/?portrait">
+              <img alt="200x200" src="https://source.unsplash.com/200x200/?profile">
               <div class="caption">
                 <h3>
-                  Marmaduke
+                  Arjen Robben
                 </h3>
                 <p>
-                  "Had a good conversation about air travel."
+                  "Pls tell me the name of the restaurant again."
                 </p>
                 <h4>Montag</h4>
                 <i class="fas fa-angle-right"></i>
@@ -188,7 +184,7 @@
                   <%= @profile.first_name %> <%= @profile.last_name%>
                 </h3>
                 <p>
-                  <%= @profile.description %>
+                  Jesus, also referred to as Jesus of Nazareth and Jesus Christ, was a first-century Jewish preacher and religious leader. He is the central figure of Christianity. Most Christians believe he is the incarnation of God the Son and the awaited Messiah prophesied in the Old Testament.
                 </p>
               </div>
             </div>

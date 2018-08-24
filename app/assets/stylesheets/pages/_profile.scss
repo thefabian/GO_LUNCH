@@ -158,6 +158,11 @@ ul, ol {
 .review-cards {
   margin-top: 50px !important;
   position: relative !important;
+  h3 {
+    font-size: 20px;
+    text-align: left;
+  }
+
   img {
     position: absolute;
     top: -50px;
@@ -227,6 +232,20 @@ ul, ol {
 }
 
 #messages{
+   position: relative !important;
+  i {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+  }
+
+  i:hover {
+    color: #469AE0;
+  }
+
   hr{
     margin-top: 5px !important;
     margin-bottom: 5px !important;
@@ -235,6 +254,7 @@ ul, ol {
 
 #description{
   height: 250px;
+  margin-bottom: 0px;
 }
 
 
@@ -250,7 +270,7 @@ ul, ol {
     position: absolute;
     padding: 0px;
     margin: 0px;
-    top: 0px;
+    top: -20px;
     left: 40px;
     right: 40px;
   }
@@ -259,7 +279,7 @@ ul, ol {
     position: absolute;
     padding: 0px;
     margin: 0px;
-    top: 50px;
+    top: 30px;
     left: 40px;
     left: 40px;
   }
