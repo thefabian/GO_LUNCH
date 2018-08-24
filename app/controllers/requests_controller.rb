@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :new, :create ]
   def new
     @request = Request.new
   end
@@ -7,16 +8,18 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.user = current_user
     if @request.save
-      # redirect_to request_path(@request)
+      params[:request][:date].each do |date|
+        Availability.create(date: date, request: @request)
+      end
+      redirect_to profile_path(@request.user_id)
     else
-      render "profiles/show"
+      redirect_to profile_path(@request.user_id)
     end
   end
 
   private
 
   def request_params
-    params.require(:request).permit(:date, :location, :kind)
+    params.require(:request).permit(:location, :kind)
   end
-
 end
