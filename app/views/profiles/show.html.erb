@@ -82,42 +82,6 @@
           <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
           </div>
         </div>
-        <div class="form-post">
-          <h1>New Lunch Request</h1>
-          <%= simple_form_for [@profile, @request], method: :get, url: profile_path do |t| %>
-          <div class="row">
-            <div class="col-xs-6 form-match" id="input-req">
-              <%= t.input :location, required: false, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
-            </div>
-            <div class="col-xs-6 form-match" id="input-req">
-              <%= t.input :kind, required: false, placeholder: "Category", collection: ["Delivery", "Restaurant", "Cafeteria"], class: "collection_form", prompt: "Select Lunch Category" %>
-            </div>
-          </div>
-          <!-- Inject categories here -->
-          <br>
-          <div class="form-group">
-            <div class="header-line">
-              <p class="header-line" style="text-align: center; background-color: #fff !important;">
-                <span id="select-date" style="background-color: #fff !important;">Please select your next lunch date</span>
-              </p>
-            </div>
-            <!-- <input type="hidden" name="post" value=""> -->
-            <div class="day-choices">
-              <% @next_days.each do |day| %>
-                <input type="checkbox" class="hidden" value="<%= day %>" name="day[]" id="post_days_<%= day %>">
-                <label class="day-choice" for="post_days_<%= day %>">
-                  <%= day.strftime("%a") %>
-                  <br>
-                  <%= day.strftime("%b %d") %>
-                  <br>
-                  <i class="fas fa-check" id="check"></i>
-                </label>
-              <% end %>
-            </div>
-          </div>
-          <%=  t.submit "Request Lunch", class: "btn btn-primary btn-block", id: "btt" %>
-          <% end %>
-        </div>
         <div class="form-post" id="messages">
           <h1>Messages</h1>
           <i class="far fa-edit"></i>

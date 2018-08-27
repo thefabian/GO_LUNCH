@@ -1,23 +1,8 @@
 class LunchesController < ApplicationController
-  def new
-    @lunch = Lunch.new
-  end
-
-  def create
-    @lunch = Lunch.new(lunch_params)
-    @request = Request.find_by(user :current_user)
-    @lunch.request_1 = @request.current_user.id
-    @lunch.request_2 = @request.find_matching_requests
-    if @lunch.save
-      redirect_to lunch_path(@lunch)
-    else
-      render "lunches/show"
-    end
-  end
-
-  private
-
-  def lunch_params
-    params.require(:lunch).permit(:date, :location, :kind)
+  def show
+    @lunch = Lunch.find(params[:id])
+    authorize @lunch
   end
 end
+
+
