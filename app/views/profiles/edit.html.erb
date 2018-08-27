@@ -1,0 +1,54 @@
+<div class="grey-wrapper">
+  <div class="container login-container text-center">
+    <div id="signup">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="header-line">
+            <p class="header-line">
+              <span>SETUP YOUR PROFILE</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="form-inputs" id="setup">
+            <%= simple_form_for @profile do |f| %>
+              <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+              <% if current_user.photo.blank? %>
+                <div class="avatar-icon">
+                  <i class="far fa-user-circle"></i>
+                </div>
+              <% else %>
+                <%= cl_image_tag current_user.photo, class: "avatar" %>
+              <% end %>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden, placeholder: "Upload your Company Logo" %>
+            </div>
+            <div class="col-xs-12 col-sm-6" id="name-1">
+              <%= f.input :first_name, placeholder: "First Name", as: :string %>
+            </div>
+            <div class="col-xs-12 col-sm-6" id="name-2">
+              <%= f.input :last_name, placeholder: "Last Name", as: :string %>
+            </div>
+            <%= f.input :job_title, placeholder: 'Job Title' %>
+            <%= f.input :department, collection: ["HUMAN RESOURCES","MARKETING/PROMOTION","PRODUCTION","SALES","CUSTOMER SERVICE SUPPORT","ACCOUNTING AND FINANCE","DISTRIBUTION","RESEARCH AND DEVELOPMENT","ADMINISTRATIVE AND MANAGEMENT","OPERATIONS","INFORMATION TECHNOLOGY SUPPORT","PURCHASING","LEGAL DEPARTMENT"], class: "collection_form", prompt: "Department" %>
+            <%= f.input :location, collection: ["Berlin", "Düsseldorf", "Frankfurt", "Hamburg", "Köln", "München", "Nürnberg", "Stuttgart"], class: "collection_form", prompt: "Location" %>
+            <%= f.input :description, placeholder: 'Description' %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Create profile", :class => "button btn btn-primary btn-block" %>
+          </div>
+          <div class="divider">
+            <hr>
+          </div>
+          <%= link_to "", profile_path, class: 'fas fa-backward' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

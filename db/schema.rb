@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_23_160302) do
+ActiveRecord::Schema.define(version: 2018_08_27_122325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,22 @@ ActiveRecord::Schema.define(version: 2018_08_23_160302) do
     t.string "employee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "department"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_departments_on_company_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "location"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_locations_on_company_id"
   end
 
   create_table "lunches", force: :cascade do |t|
@@ -89,6 +105,8 @@ ActiveRecord::Schema.define(version: 2018_08_23_160302) do
   end
 
   add_foreign_key "availabilities", "requests"
+  add_foreign_key "departments", "companies"
+  add_foreign_key "locations", "companies"
   add_foreign_key "lunches", "requests", column: "request_1_id"
   add_foreign_key "lunches", "requests", column: "request_2_id"
   add_foreign_key "profiles", "companies"
