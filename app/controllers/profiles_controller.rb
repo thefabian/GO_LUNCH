@@ -7,9 +7,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
-
-    # Rails.logger.info "PROFIL VALID? #{@profile.valid?}"
-    # Rails.logger.info "PROFIL #{@profile.errors.messages}"
+    @profile.email = current_user.email
     if @profile.save
       redirect_to profile_path(@profile)
     else
@@ -19,16 +17,6 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find_by(user: current_user)
-    @request = Request.new
-    @next_days = []
-    counter = 0
-    7.times do
-      day = Date.tomorrow + counter
-      unless day.saturday? || day.sunday?
-        @next_days << day
-      end
-      counter += 1
-    end
   end
 
   def edit
