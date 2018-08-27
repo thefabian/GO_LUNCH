@@ -8,7 +8,12 @@
           </a>
         </div>
         <div class="pen">
+          <%= link_to edit_company_path do %>
+            <i class="fas fa-pen"></i>
+          <% end  %>
+          <%= link_to edit_profile_path do %>
           <i class="fas fa-pen"></i>
+          <% end  %>
         </div>
         <div class="">
           <h3 id="profile-name"><%= @profile.first_name %> <%= @profile.last_name  %></h3>
@@ -24,7 +29,7 @@
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">messages</strong></span><span id="right-side">3</span></p></li>
           <li class="list-group-item text-muted" id="top-border"><span><p><strong class="group-name"></strong></span><span id="right-side"></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">description</strong></span><span id="right-side"></span></p></li>
-          <p id="descr">Jesus, also referred to as Jesus of Nazareth and Jesus Christ, was a first-century Jewish preacher and religious leader. He is the central figure of Christianity. Most Christians believe he is the incarnation of God the Son and the awaited Messiah prophesied in the Old</p>
+          <p id="descr"><%=@profile.description%></p>
         </ul>
         <div>
           <div class="panel-body" id="top-icons">
