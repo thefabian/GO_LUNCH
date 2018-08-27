@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     Department.where(id: params[:company][:departments]).each do |department|
-      @company.departments << department
+     @company.departments << department
     end
 
     if @company.save
@@ -19,19 +19,18 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    @company = Company.find(params[:id])
-  end
+     @company = Company.find(params[:id])
+   end
 
   def update
     @company = Company.find(params[:id])
     @company.update(company_params)
     if @company.save
-      redirect_to company_path(@company)
+     redirect_to company_path(@company)
     else
-      render :edit
+     render :edit
     end
   end
-
 
   private
 
