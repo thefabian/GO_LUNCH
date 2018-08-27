@@ -8,7 +8,12 @@
           </a>
         </div>
         <div class="pen">
+          <%= link_to edit_company_path do %>
+            <i class="fas fa-pen"></i>
+          <% end  %>
+          <%= link_to edit_profile_path do %>
           <i class="fas fa-pen"></i>
+          <% end  %>
         </div>
         <div class="">
           <h3 id="profile-name"><%= @profile.first_name %> <%= @profile.last_name  %></h3>
@@ -24,7 +29,7 @@
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">messages</strong></span><span id="right-side">3</span></p></li>
           <li class="list-group-item text-muted" id="top-border"><span><p><strong class="group-name"></strong></span><span id="right-side"></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">description</strong></span><span id="right-side"></span></p></li>
-          <p id="descr">Jesus, also referred to as Jesus of Nazareth and Jesus Christ, was a first-century Jewish preacher and religious leader. He is the central figure of Christianity. Most Christians believe he is the incarnation of God the Son and the awaited Messiah prophesied in the Old</p>
+          <p id="descr"><%=@profile.description%></p>
         </ul>
         <div>
           <div class="panel-body" id="top-icons">
@@ -81,42 +86,6 @@
           <div class="col-xs-12 col-md-6 col-md-offset-3">
           <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
           </div>
-        </div>
-        <div class="form-post">
-          <h1>New Lunch Request</h1>
-          <%= simple_form_for [@profile, @request], method: :get, url: profile_path do |t| %>
-          <div class="row">
-            <div class="col-xs-6 form-match" id="input-req">
-              <%= t.input :location, required: false, placeholder: "Location", as: :string, input_html: { id: "end_date" } %>
-            </div>
-            <div class="col-xs-6 form-match" id="input-req">
-              <%= t.input :kind, required: false, placeholder: "Category", collection: ["Delivery", "Restaurant", "Cafeteria"], class: "collection_form", prompt: "Select Lunch Category" %>
-            </div>
-          </div>
-          <!-- Inject categories here -->
-          <br>
-          <div class="form-group">
-            <div class="header-line">
-              <p class="header-line" style="text-align: center; background-color: #fff !important;">
-                <span id="select-date" style="background-color: #fff !important;">Please select your next lunch date</span>
-              </p>
-            </div>
-            <!-- <input type="hidden" name="post" value=""> -->
-            <div class="day-choices">
-              <% @next_days.each do |day| %>
-                <input type="checkbox" class="hidden" value="<%= day %>" name="day[]" id="post_days_<%= day %>">
-                <label class="day-choice" for="post_days_<%= day %>">
-                  <%= day.strftime("%a") %>
-                  <br>
-                  <%= day.strftime("%b %d") %>
-                  <br>
-                  <i class="fas fa-check" id="check"></i>
-                </label>
-              <% end %>
-            </div>
-          </div>
-          <%=  t.submit "Request Lunch", class: "btn btn-primary btn-block", id: "btt" %>
-          <% end %>
         </div>
         <div class="form-post" id="messages">
           <h1>Messages</h1>
