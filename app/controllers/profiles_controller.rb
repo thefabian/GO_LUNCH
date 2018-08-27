@@ -20,18 +20,20 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
-  end
+     @profile = Profile.find(params[:id])
+   end
 
   def update
     @profile = Profile.find_by(user: current_user)
     @profile.update(profile_params)
     if @profile.save
-      redirect_to profile_path(@profile)
+     redirect_to profile_path(@profile)
     else
-      render :edit
+     render :edit
     end
   end
+
+
 
   private
 
