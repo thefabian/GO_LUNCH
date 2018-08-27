@@ -5,4 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
 
   has_one :user
+  has_many :messages, through: :conversations
+
+
 end

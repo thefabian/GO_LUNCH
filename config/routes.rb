@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/index'
+  get 'conversations/index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   root to: 'pages#home'
@@ -9,5 +11,8 @@ Rails.application.routes.draw do
   resources :companies, only: [ :new, :create, :show ]
   resources :profiles, only: [ :new, :create, :show ] do
     resources :requests, only: [ :new, :create, :show ]
+  end
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
   end
 end
