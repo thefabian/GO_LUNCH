@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_122325) do
+ActiveRecord::Schema.define(version: 2018_08_27_102630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 2018_08_27_122325) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "conversations", id: :serial, force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 
   create_table "departments", force: :cascade do |t|
     t.string "department"
@@ -60,6 +66,17 @@ ActiveRecord::Schema.define(version: 2018_08_27_122325) do
     t.bigint "request_2_id"
     t.index ["request_1_id"], name: "index_lunches_on_request_1_id"
     t.index ["request_2_id"], name: "index_lunches_on_request_2_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -109,6 +126,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_122325) do
   add_foreign_key "locations", "companies"
   add_foreign_key "lunches", "requests", column: "request_1_id"
   add_foreign_key "lunches", "requests", column: "request_2_id"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "profiles", "companies"
   add_foreign_key "profiles", "users"
   add_foreign_key "requests", "lunches"
