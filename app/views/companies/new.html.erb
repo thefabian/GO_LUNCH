@@ -15,10 +15,19 @@
           <div class="form-inputs" id="setup">
             <%= simple_form_for @company do |f| %>
             <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
+              <% if current_user.photo.blank? %>
+              <div class="avatar-icon">
+                <i class="far fa-user-circle"></i>
+              </div>
+              <% else %>
+              <%= cl_image_tag current_user.photo, class: "avatar" %>
+              <% end %>
             </div>
             <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden, placeholder: "Upload your Company Logo" %>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4">
             </div>
             <%= f.input :name, placeholder: "Name", as: :string %>
             <%= f.input :email, placeholder: "Email" %>

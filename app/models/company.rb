@@ -1,5 +1,6 @@
 class Company < ApplicationRecord
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
+
   has_one :location
   has_many :departments
   has_many :profiles
