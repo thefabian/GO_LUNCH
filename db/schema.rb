@@ -39,6 +39,21 @@ ActiveRecord::Schema.define(version: 2018_08_27_102630) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+  create_table "departments", force: :cascade do |t|
+    t.string "department"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_departments_on_company_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "location"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_locations_on_company_id"
   end
 
   create_table "lunches", force: :cascade do |t|
@@ -107,6 +122,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_102630) do
   end
 
   add_foreign_key "availabilities", "requests"
+  add_foreign_key "departments", "companies"
+  add_foreign_key "locations", "companies"
   add_foreign_key "lunches", "requests", column: "request_1_id"
   add_foreign_key "lunches", "requests", column: "request_2_id"
   add_foreign_key "messages", "conversations"

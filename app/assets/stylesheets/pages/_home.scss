@@ -161,7 +161,7 @@ header.masthead p {
 
 #benefits {
   color: #484848 !important;
-  height: calc(800px - 70px - 100px);
+  height: calc(900px - 70px - 100px);
   margin-bottom: 70px;
 }
 
@@ -202,7 +202,13 @@ header.masthead p {
 }
 
 .panel-heading {
-  background-color: #f0f0f0 !important;
+  background-color: #f4f4f4 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.panel-heading-last {
+  background-color: #f4f4f4 !important;
+  border-bottom: 0px solid #e0e0e0 !important;
 }
 
 .fas.fa-angle-down {
@@ -244,10 +250,42 @@ header.masthead p {
   cursor: pointer;
 }
 
-.cirlce {
+
+.fat {
   width: 100px;
   height: 100px;
   border: 3px solid #469AE0;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #469AE0 !important;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fa-smile {
+  color: #469AE0 !important;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #469AE0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mx-auto {
+  padding-top: 70px;
+}
+
+#help-pic {
+  padding-top: 0px !important;
 }
 

@@ -15,7 +15,13 @@
           <div class="form-inputs" id="setup">
             <%= simple_form_for @company do |f| %>
             <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
+              <% if current_user.photo.blank? %>
+                <div class="company-placeholder">
+                  <i class="fas fa-image"></i>
+                </div>
+              <% else %>
+                <%= cl_image_tag current_user.photo, class: "company-logo" %>
+              <% end %>
             </div>
             <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
@@ -24,7 +30,7 @@
             <%= f.input :email, placeholder: "Email" %>
             <%= f.input :address, placeholder: "Address", as: :string %>
             <%= f.input :locations, placeholder: 'Locations' %>
-            <%= f.input :departments, required: false, as: :check_boxes, collection: Department.all, class: "collection_form", prompt: "Departmenttest", label_method: -> (department){department.department} %>
+            <%= f.input :departments, required: false, as: :check_boxes, collection: ["HUMAN RESOURCES","MARKETING/PROMOTION","PRODUCTION","SALES","CUSTOMER SERVICE SUPPORT","ACCOUNTING AND FINANCE","DISTRIBUTION","RESEARCH AND DEVELOPMENT","ADMINISTRATIVE AND MANAGEMENT","OPERATIONS","INFORMATION TECHNOLOGY SUPPORT","PURCHASING","LEGAL DEPARTMENT"], class: "collection_form", prompt: "Department" %>
             <%= f.input :employee, collection: ["Employees 1-50", "Employees 51-200", "Employees 201-1,000", "Employees 1,001-5,000", "Employees 5000+"], class: "collection_form", prompt: "Employee range" %>
           </div>
           <div class="form-actions">
@@ -40,6 +46,3 @@
     </div>
   </div>
 </div>
-
-
-

@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get "pricing", to: "pages#pricing"
   get "conformation", to: "pages#conformation"
   resources :companies, only: [ :new, :create, :show ]
-  resources :profiles, only: [ :new, :create, :show ] do
-    resources :requests, only: [ :new, :create, :show ]
-  end
+  resources :profiles, only: [ :new, :create, :show ]
+  resources :requests, only: [ :new, :create, :show ]
+  resources :lunches, only: :show
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end

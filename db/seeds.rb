@@ -18,35 +18,64 @@ user_3 = User.create!(email: "test3@test.com", password: "secret")
 
 puts "Created #{User.count} users"
 
-#Lunch.create(user_1: user_1, user_2: user_2, location: "Berlin", date: Time.zone.now)
+# dp = ["HUMAN RESOURCES","MARKETING/PROMOTION",
+#   "PRODUCTION","SALES","CUSTOMER SERVICE SUPPORT",
+#   "ACCOUNTING AND FINANCE","DISTRIBUTION","RESEARCH AND DEVELOPMENT",
+#   "ADMINISTRATIVE AND MANAGEMENT","OPERATIONS","INFORMATION TECHNOLOGY SUPPORT",
+#   "PURCHASING","LEGAL DEPARTMENT"]
+#   p dp
 
+#   dp.each do |department|
+#    deparment = Department.create!(department)
+#    department.save!
+#   end
+
+#Lunch.create(user_1: user_1, user_2: user_2, location: "Berlin", date: Time.zone.now)
 company = Company.create!(
   name: 'google',
   address: 'abc',
   locations: "hamburg",
-  departments: "HUMAN RESOURCES",
   email: 'Hamburg@GMAIL.COM',
   # employee_range: "1-50 employees"
   # remote_photo_url: "https://www.google.de/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
 )
 
 
+dp = Department.new(department: "Human Resources", company: company)
+dp.save!
 
-puts "Creating profile..."
+dp = Department.new(department: "Production", company: company)
+dp.save!
 
-profiles = Profile.create!(
-  first_name: 'Jesus',
-  last_name: 'christ',
-  company: company,
-  job_title: "Messiah",
-  department: 'HUMAN RESOURCES',
-  location: 'himmel',
-  description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
-  user_id: user_2.id,
-  remote_photo_url: "https://www.lds.org/youth/bc/youth/article/why-is-jesus-christ-important-in-my-life/images/Why-is-Jesus-Christ-Important-in-My-Life-main-1138511.jpg",
-  admin: true,
+dp = Department.new(department: "Sales", company: company)
+dp.save!
 
-)
+dp = Department.new(department: "Marketing", company: company)
+dp.save!
+
+dp = Department.new(department: "Customer support", company: company)
+dp.save!
+
+dp = Department.new(department: "Accounting", company: company)
+dp.save!
+
+dp = Department.new(department: "Finance", company: company)
+dp.save!
+
+dp = Department.new(department: "Distribution", company: company)
+dp.save!
+
+dp = Department.new(department: "R&D", company: company)
+dp.save!
+
+dp = Department.new(department: "Information Technology", company: company)
+dp.save!
+
+dp = Department.new(department: "Purchasing", company: company)
+dp.save!
+
+dp = Department.new(department: "Legal Department", company: company)
+dp.save!
 
 
 # (
@@ -61,4 +90,5 @@ profiles = Profile.create!(
 #   remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Bruce_Willis_by_Gage_Skidmore_3.jpg/440px-Bruce_Willis_by_Gage_Skidmore_3.jpg",
 #   admin: true,)
 
-puts "You have created #{Profile.count} profiles."
+# puts "You have created #{Profile.count} profiles."
+
