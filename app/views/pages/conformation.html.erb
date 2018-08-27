@@ -1,32 +1,37 @@
 
 <div class="backgroundconforamtion ">
-  <br>
-  <br>
-<div class="text-center headline" ><h2>YOU LUNCH BUDDY IS </h2></div>
+  <div class="container" id="confirmation-page">
+      <br>
+      <br>
+      <div class="text-center headline" ><h2>Your next lunch Buddy is</h2></div>
+      <div class="conformationcontainer fade-in">
+        <div class="avatar-flip">
+          <img src="http://media.idownloadblog.com/wp-content/uploads/2012/04/Phil-Schiller-headshot-e1362692403868.jpg" height="150" width="150">
+        </div>
+       <div class="header-line">
+                  <p class="header-line" style="text-align: center; background-color: #fff !important;">
+                    <span id="select-date" style="background-color: #fff !important;">Wed. Aug. 29.</span>
+                  </p>
 
-
-<div class="conformationcontainer fade-in">
-  <div class="avatar-flip">
-    <img src="http://media.idownloadblog.com/wp-content/uploads/2012/04/Phil-Schiller-headshot-e1362692403868.jpg" height="150" width="150">
+      <h3>Phil Schiller</h3>
+      <h4>Head of marketing</h4>
+      <p>Marketing</p>
+      <hr id="hr-conf">
+      <p> Phil Schiller was born in Natick, Massachusetts, on June 8, 1960. Schiller graduated from Boston College in 1982, with a Bachelor of Science degree in Biology. He has held a variety of corporate positions such as Vice President of Macromedia, in San Francisco; Director of Product Marketing at FirePower Systems.</p>
+      <hr>
+      <div title="Add to Calendar" class="addeventatc">
+        Add to Calendar
+        <span class="start">09/07/2018 08:00 AM</span>
+        <span class="end">09/07/2018 10:00 AM</span>
+        <span class="timezone">America/Los_Angeles</span>
+        <span class="title">Summary of the event</span>
+        <span class="description">Description of the event</span>
+        <span class="location">Location of the event</span>
+      </div>
+      <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
+    </div>
+    <br>
+    <br>
+    <br>
   </div>
-  <p>Wed. Aug. 29.</p>
-  <h2>Phil Schiller</h2>
-  <h4>Head of marketing</h4>
-  <p> Phil Schiller was born in Natick, Massachusetts, on June 8, 1960. Schiller graduated from Boston College in 1982, with a Bachelor of Science degree in Biology. He has held a variety of corporate positions such as Vice President of Macromedia, in San Francisco; Director of Product Marketing at FirePower Systems.</p>
-  <p>Marketing</p>
-  <div title="Add to Calendar" class="addeventatc">
-    Add to Calendar
-    <span class="start">09/07/2018 08:00 AM</span>
-    <span class="end">09/07/2018 10:00 AM</span>
-    <span class="timezone">America/Los_Angeles</span>
-    <span class="title">Summary of the event</span>
-    <span class="description">Description of the event</span>
-    <span class="location">Location of the event</span>
-  </div>
-  <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
 </div>
-<br>
-<br>
-<br>
-</div>
-
