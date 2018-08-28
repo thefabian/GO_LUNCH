@@ -1,36 +1,100 @@
-.chatperson{
-  display: block;
-  border-bottom: 1px solid #eee;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  margin-bottom: 15px;
-  padding: 4px;
+// .message_user_one {
+//    padding: 20px;
+//    margin: 20px;
+//    background: #4A9BDD;
+//    color: #fff;
+//    font-size: 21px;
+//    font-weight: bold;
+//    line-height: 1.3em;
+//    border-radius: 10px;
+//    box-shadow: 0 0 0 4px grey, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+//    text-shadow: -1px -1px black;
+//    font-weight: normal;
+//    width: 50%;
+// }
+
+
+
+// .message_user_two {
+//    padding: 20px;
+//    margin: 20px;
+//    background: grey;
+//    color: #fff;
+//    font-size: 21px;
+//    font-weight: bold;
+//    line-height: 1.3em;
+//    border-radius: 10px;
+//    box-shadow: 0 0 0 4px grey, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+//    text-shadow: -1px -1px black;
+//    font-weight: normal;
+//    width: 50%;
+// }
+
+
+// .inboxcontainer
+// {
+// width: 50%;
+// margin-left: auto;
+// margin-right: auto;
+// margin-top:50px;
+// margin-bottom: 70px;
+// }
+
+
+.chatcontainer {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3% 10%;
 }
-.chatperson:hover{
-  text-decoration: none;
-  border-bottom: 1px solid orange;
+
+/* Darker chat chatcontainer */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+    text-align: right;
+
+
 }
-.namechat {
-    display: inline-block;
-    vertical-align: middle;
+
+/* Clear floats */
+.chatcontainer::after {
+    content: "";
+    clear: both;
+    display: table;
 }
-.chatperson .chatimg img{
-  width: 40px;
-  height: 40px;
-  background-image: url('http://i.imgur.com/JqEuJ6t.png');
+
+/* Style images */
+.chatcontainer img {
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
 }
-.chatperson .pname{
-  font-size: 18px;
-  padding-left: 5px;
+
+/* Style the right image */
+.chatcontainer img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
 }
-.chatperson .lastmsg{
-  font-size: 12px;
-  padding-left: 5px;
-  color: #ccc;
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
 }
-.limit-item {
-    height: 50%;
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+}
+
+.Content
+{
+  height:224px;
+   overflow:auto;
+    background:#fff;
 }
