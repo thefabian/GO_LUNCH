@@ -5,7 +5,7 @@
     <div class="text-center headline" ><h2>Your next lunch Buddy is</h2></div>
     <div class="conformationcontainer fade-in">
       <div class="avatar-flip">
-        <%= cl_image_tag( @lunch.request_2.user.profile.photo, :transformation=>[{:width=>150, :height=>150, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+        <%= cl_image_tag( @lunch.other_user(current_user).profile.photo, :transformation=>[{:width=>150, :height=>150, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
       </div>
       <div class="header-line" style=" position: relative;">
         <p class="header-line" style="text-align: center; background-color: #fff !important;">
@@ -22,18 +22,18 @@
         </span>
 
         <h3>
-          <%= @lunch.request_2.user.profile.first_name %>
-          <%= @lunch.request_2.user.profile.last_name %>
+          <%= @lunch.other_user(current_user).profile.first_name %>
+          <%= @lunch.other_user(current_user).profile.last_name %>
         </h3>
         <h4>
-          <%= @lunch.request_2.user.profile.job_title %>
+          <%= @lunch.other_user(current_user).profile.job_title %>
         </h4>
         <p>
-          <%= @lunch.request_2.user.profile.department %>
+          <%= @lunch.other_user(current_user).profile.department %>
         </p>
         <hr id="hr-conf">
         <p>
-          <%= @lunch.request_2.user.profile.description %>
+          <%= @lunch.other_user(current_user).profile.description %>
         </p>
         <hr>
         <div title="Add to Calendar" class="addeventatc">

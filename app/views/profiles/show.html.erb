@@ -9,7 +9,7 @@
         </div>
         <div class="pen">
           <%= link_to edit_company_path(@profile.company) do %>
-            <i class="fas fa-pen"></i>
+          <i class="fas fa-pen"></i>
           <% end  %>
           <%= link_to edit_profile_path do %>
           <i class="fas fa-pen"></i>
@@ -43,108 +43,114 @@
     </div>
 
     <div class="col-xs-12 col-sm-8" contenteditable="false" id="date-card">
-       <div class="lunch-date" id="date-container">
-        <i class="fas fa-map-marked-alt click"></i>
-          <h1>Your Next Lunch Date</h1>
-          <h4>WED. AUG. 29. | LUNCH TYPE  outside | Ask Phil</h4>
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
-            <div class="review-cards">
-              <div class="thumbnail avatar-user">
-                <img alt="300x200" src="https://source.unsplash.com/200x200/?lunch">
-                <div class="caption">
-                  <section>
-                    <div class="col-md-12">
-                      <div class="panel-group"  id="lunch-profile">
-                        <div class="panel panel-default">
-                          <div class="accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question0" data-toggle="collapse">
-                            <h3 class="panel-name">
-                            <a href="#question0" name="question0" class="panel-head"></a>
-                              Phil Schiller <i class="fas fa-angle-down arrow"></i>
-                            </h3>
-                          </div>
-                          <div class="panel-collapse collapse" id="question0">
-                            <div class="panel-lunch">
-                              <h4>Head of marketing</h4>
-                              <p>Marketing</p>
-                              <hr id="hr-conf">
-                              <p> Phil Schiller was born in Natick, Massachusetts, on June 8, 1960. Schiller graduated from Boston College in 1982, with a Bachelor of Science degree in Biology. He has held a variety of corporate positions such as Vice President of Macromedia, in San Francisco; Director of Product Marketing at FirePower Systems.</p>
-                            </div>
-                          </div>
+     <div class="lunch-date" id="date-container">
+      <i class="fas fa-map-marked-alt click"></i>
+      <h1>Your Next Lunch Date</h1>
+      <h4>
+        <%= current_user.next_lunch.date.strftime("%a %b %d") %>
+        | LUNCH TYPE
+        <%= current_user.next_lunch.kind %>
+        | Ask
+        <%= current_user.next_lunch.other_user(current_user).profile.first_name %>
+      </h4>
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div class="review-cards">
+          <div class="thumbnail avatar-user">
+            <%= cl_image_tag( current_user.next_lunch.other_user(current_user).profile.photo, :transformation=>[{:width=>150, :height=>150, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+            <div class="caption">
+              <section>
+                <div class="col-md-12">
+                  <div class="panel-group"  id="lunch-profile">
+                    <div class="panel panel-default">
+                      <div class="accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question0" data-toggle="collapse">
+                        <h3 class="panel-name">
+                          <a href="#question0" name="question0" class="panel-head"></a>
+                          <%= current_user.next_lunch.other_user(current_user).profile.first_name %> <%= current_user.next_lunch.other_user(current_user).profile.last_name %> <i class="fas fa-angle-down arrow"></i>
+                        </h3>
+                      </div>
+                      <div class="panel-collapse collapse" id="question0">
+                        <div class="panel-lunch">
+                          <h4><%= current_user.next_lunch.other_user(current_user).profile.job_title %></h4>
+                          <p><%= current_user.next_lunch.other_user(current_user).profile.department %></p>
+                          <hr id="hr-conf">
+                          <p><%= current_user.next_lunch.other_user(current_user).profile.description %></p>
                         </div>
                       </div>
                     </div>
-                  </section>
-                  <div class="icons-lunch-date">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-xing-square"></i>
-                    <i class="fab fa-google-plus"></i>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
-          <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
-          </div>
-        </div>
-         <div class="lunch-date hidden" id="map-container">
-           <i class="fas fa-address-card click2"></i>
-          <div class="card-large" id="map_all" data-lat="<%= @profile.latitude %>" data-lng="<%= @profile.longitude %>"></div>
-        </div>
-        <div class="form-post" id="messages">
-          <h1>Messages</h1>
-          <i class="far fa-edit"></i>
-          <div class="row message-cards avatar-user">
-            <div class="">
-              <img alt="300x200" src="https://source.unsplash.com/300x200/?portrait" class="avatar-user">
-              <div class="caption">
-                <h3>
-                  Robert Lewandowski
-                </h3>
-                <p>
-                  "Gonna score next game, I promise!"
-                </p>
-                <h4>Mittwoch</h4>
-                <i class="fas fa-angle-right"></i>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="row message-cards avatar-user">
-            <div class="">
-              <div class="caption">
-                <div class="img-review">
-                  <img alt="300x200" src="https://source.unsplash.com/300x200/?face">
-                </div>
-                <h3>
-                  Frank Ribery
-                </h3>
-                <p>
-                  "Do you like to lunch sometime soon?"
-                </p>
-                <h4>Dienstag</h4>
-                <i class="fas fa-angle-right"></i>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="row message-cards avatar-user">
-            <div class="">
-              <img alt="200x200" src="https://source.unsplash.com/200x200/?profile">
-              <div class="caption">
-                <h3>
-                  Arjen Robben
-                </h3>
-                <p>
-                  "Pls tell me the name of the restaurant again."
-                </p>
-                <h4>Montag</h4>
-                <i class="fas fa-angle-right"></i>
+              </section>
+              <div class="icons-lunch-date">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-xing-square"></i>
+                <i class="fab fa-google-plus"></i>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <div class="lunch-date hidden" id="map-container">
+     <i class="fas fa-address-card click2"></i>
+     <div class="card-large" id="map_all" data-lat="<%= @profile.latitude %>" data-lng="<%= @profile.longitude %>"></div>
+   </div>
+   <div class="form-post" id="messages">
+    <h1>Messages</h1>
+    <i class="far fa-edit"></i>
+    <div class="row message-cards avatar-user">
+      <div class="">
+        <img alt="300x200" src="https://source.unsplash.com/300x200/?portrait" class="avatar-user">
+        <div class="caption">
+          <h3>
+            Robert Lewandowski
+          </h3>
+          <p>
+            "Gonna score next game, I promise!"
+          </p>
+          <h4>Mittwoch</h4>
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row message-cards avatar-user">
+      <div class="">
+        <div class="caption">
+          <div class="img-review">
+            <img alt="300x200" src="https://source.unsplash.com/300x200/?face">
+          </div>
+          <h3>
+            Frank Ribery
+          </h3>
+          <p>
+            "Do you like to lunch sometime soon?"
+          </p>
+          <h4>Dienstag</h4>
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row message-cards avatar-user">
+      <div class="">
+        <img alt="200x200" src="https://source.unsplash.com/200x200/?profile">
+        <div class="caption">
+          <h3>
+            Arjen Robben
+          </h3>
+          <p>
+            "Pls tell me the name of the restaurant again."
+          </p>
+          <h4>Montag</h4>
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+</div>
 </div>
