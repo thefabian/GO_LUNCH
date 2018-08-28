@@ -9,6 +9,6 @@ class Profile < ApplicationRecord
   validates :job_title, presence: true
   validates :location, presence: true
   validates :description, presence: true
-  # geocoded_by :location
-  # after_validation :geocode, if: :will_save_change_to_location?
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
