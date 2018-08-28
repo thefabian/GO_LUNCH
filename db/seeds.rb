@@ -38,18 +38,30 @@ company = Company.create!(
 
 puts "Creating profile..."
 
-profiles = Profile.create!(
+profiles = Profile.create!([
+{
   first_name: 'Jesus',
-  last_name: 'christ',
+  last_name: 'Christ',
   company: company,
   job_title: "Messiah",
-  location: 'himmel',
+  location: 'Himmel',
   description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
   user_id: user_2.id,
   remote_photo_url: "https://www.lds.org/youth/bc/youth/article/why-is-jesus-christ-important-in-my-life/images/Why-is-Jesus-Christ-Important-in-My-Life-main-1138511.jpg",
   admin: true,
-
-)
+},
+{
+  first_name: 'Maria',
+  last_name: 'von Bethlehem',
+  company: company,
+  job_title: "Josef's bitch",
+  location: 'Himmel',
+  description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
+  user_id: user_1.id,
+  remote_photo_url: "https://www.lds.org/youth/bc/youth/article/why-is-jesus-christ-important-in-my-life/images/Why-is-Jesus-Christ-Important-in-My-Life-main-1138511.jpg",
+  admin: true,
+}
+])
 
 
 
