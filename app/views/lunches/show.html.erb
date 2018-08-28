@@ -1,4 +1,56 @@
-<p class="header-line">Hello</p>
-<%= @lunch.date %>
-<%= @lunch.kind %>
-<%= @lunch.location  %>
+<div class="backgroundconforamtion ">
+  <div class="container" id="confirmation-page">
+    <br>
+    <br>
+    <div class="text-center headline" ><h2>Your next lunch Buddy is</h2></div>
+    <div class="conformationcontainer fade-in">
+      <div class="avatar-flip">
+        <%= cl_image_tag( @lunch.request_2.user.profile.photo, :transformation=>[{:width=>150, :height=>150, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+      </div>
+      <div class="header-line" style=" position: relative;">
+        <p class="header-line" style="text-align: center; background-color: #fff !important;">
+          <span id="select-date" style="background-color: #fff !important;">
+            <%= @lunch.date.strftime("%a %b %d") %>
+          </span>
+        </p>
+        <span id="select-date" style="background-color: #fff !important;">
+          <%= @lunch.kind %>
+        </span>
+        <br>
+        <span id="select-date" style="background-color: #fff !important;">
+          <%= @lunch.location %>
+        </span>
+
+        <h3>
+          <%= @lunch.request_2.user.profile.first_name %>
+          <%= @lunch.request_2.user.profile.last_name %>
+        </h3>
+        <h4>
+          <%= @lunch.request_2.user.profile.job_title %>
+        </h4>
+        <p>
+          <%= @lunch.request_2.user.profile.department %>
+        </p>
+        <hr id="hr-conf">
+        <p>
+          <%= @lunch.request_2.user.profile.description %>
+        </p>
+        <hr>
+        <div title="Add to Calendar" class="addeventatc">
+          Add to Calendar
+          <span class="start"><%= @lunch.date.strftime("%m/%d/%Y") %> 12:00 PM</span>
+          <span class="end"><%= @lunch.date.strftime("%m/%d/%Y") %> 1:00 PM</span>
+          <span class="timezone">Europe/Berlin</span>
+          <span class="title">Summary of the event</span>
+          <span class="description">Description of the event</span>
+          <span class="location">Location of the event</span>
+        </div>
+        <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
+        <div class="card" id="map_small" data-lat="13" data-lng="52">
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
