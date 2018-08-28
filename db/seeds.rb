@@ -13,6 +13,8 @@ Department.destroy_all
 Location.destroy_all
 Profile.destroy_all
 Company.destroy_all
+Conversation.destroy_all
+Message.destroy_all
 User.destroy_all
 
 puts "Create users..."
