@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Destroy all pools."
+puts "Destroy all data."
 Profile.destroy_all
 User.destroy_all
+Department.destroy_all
 Company.destroy_all
 
 puts "Create users..."
@@ -24,7 +25,6 @@ company = Company.create!(
   name: 'google',
   address: 'abc',
   locations: "hamburg",
-  departments: "HUMAN RESOURCES",
   email: 'Hamburg@GMAIL.COM',
   # employee_range: "1-50 employees"
   # remote_photo_url: "https://www.google.de/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
@@ -39,7 +39,6 @@ profiles = Profile.create!(
   last_name: 'christ',
   company: company,
   job_title: "Messiah",
-  department: 'HUMAN RESOURCES',
   location: 'himmel',
   description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
   user_id: user_2.id,
@@ -47,6 +46,8 @@ profiles = Profile.create!(
   admin: true,
 
 )
+
+
 
 
 # (
@@ -62,3 +63,41 @@ profiles = Profile.create!(
 #   admin: true,)
 
 puts "You have created #{Profile.count} profiles."
+
+
+dp = Department.new(department: "Human Resources", company: company)
+dp.save!
+
+dp = Department.new(department: "Production", company: company)
+dp.save!
+
+dp = Department.new(department: "Sales", company: company)
+dp.save!
+
+dp = Department.new(department: "Marketing", company: company)
+dp.save!
+
+dp = Department.new(department: "Customer support", company: company)
+dp.save!
+
+dp = Department.new(department: "Accounting", company: company)
+dp.save!
+
+dp = Department.new(department: "Finance", company: company)
+dp.save!
+
+dp = Department.new(department: "Distribution", company: company)
+dp.save!
+
+dp = Department.new(department: "R&D", company: company)
+dp.save!
+
+dp = Department.new(department: "Information Technology", company: company)
+dp.save!
+
+dp = Department.new(department: "Purchasing", company: company)
+dp.save!
+
+dp = Department.new(department: "Legal Department", company: company)
+dp.save!
+

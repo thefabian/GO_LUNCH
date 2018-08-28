@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "pricing", to: "pages#pricing"
   get "conformation", to: "pages#conformation"
-  resources :companies, only: [ :new, :create, :show ]
-  resources :profiles, only: [ :new, :create, :show ]
+  resources :companies, only: [ :new, :create, :show, :edit, :update ]
+  resources :profiles, only: [ :new, :create, :show, :edit, :update ]
   resources :requests, only: [ :new, :create, :show ]
+  resources :departments, only: [ :new, :create, :show, :edit, :update ]
   resources :lunches, only: :show
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]

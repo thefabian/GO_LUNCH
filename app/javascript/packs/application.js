@@ -8,3 +8,7 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 });
+
+import { map } from '../components/map';
+
+import { map_all } from '../components/map_all';

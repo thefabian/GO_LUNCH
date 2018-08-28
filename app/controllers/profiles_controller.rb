@@ -1,11 +1,15 @@
 class ProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :new, :create ]
+
   def new
     @profile = Profile.new
   end
 
   def create
     @profile = Profile.new(profile_params)
+    Profile.find(id: params[:profile][:departments]).each do |department|
+     @profile.department
+    end
     @profile.user = current_user
     @profile.email = current_user.email
     if @profile.save
@@ -20,12 +24,15 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-     @profile = Profile.find(params[:id])
+     @profile = Profile.find_by(user: current_user)
    end
 
   def update
     @profile = Profile.find_by(user: current_user)
     @profile.update(profile_params)
+    Profile.find(id: params[:profile][:department_id]).each do |department|
+     @profile.department
+    end
     if @profile.save
      redirect_to profile_path(@profile)
     else
@@ -38,7 +45,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :job_title, :department_ids => [], :location, :description, :photo, :user_id, :email, :photo_cache)
+    params.require(:profile).permit(:first_name, :last_name, :job_title, :location, :description, :photo, :user_id, :email, :photo_cache, :department_id)
   end
 
 end
