@@ -1,26 +1,28 @@
-<div id="messages">
+<div class="chatcontainer ">
+
+<div id="messages" class="Content">
   <% @conversation.messages.each do |message| %>
     <% if message.body %>
       <div class="media">
-        <div class="media-left">
-          <%= message.user.photo %>
-        </div>
-        <div class="media-body">
+        <div class="media-body <%= message.user == current_user ? "chatcontainer darker" : "chatcontainer" %>">
+          <%= cl_image_tag(current_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+          <div class="">
           <h5><%= message.user.email%></h5>
           <p><%= message.body %></p>
+        </div>
         </div>
       </div>
     <% end %>
   <% end %>
 </div>
-
 <%= form_for [@conversation, @message] do |f| %>
-  <div class="form-group">
+  <div class="form-group ">
     <%= f.text_area :body, autofocus: true, placeholder: "Your message", class: "form-control", rows: 5 %>
   </div>
 
   <%= f.submit "Send", class: "btn btn-primary pull-right" %>
 <% end %>
 
+</div>
 
 
