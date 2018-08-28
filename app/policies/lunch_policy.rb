@@ -6,7 +6,6 @@ class LunchPolicy < ApplicationPolicy
   end
 
   def show?
-    record.request_1.user == user ||
-      record.request_2.user == user
+    record.users.include? user
   end
 end
