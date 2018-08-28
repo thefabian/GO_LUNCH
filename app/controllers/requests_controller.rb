@@ -18,7 +18,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    profile = Profile.find(current_user.id)
+    profile = Profile.find_by(user: current_user)
 
     @next_days = []
     counter = 0
