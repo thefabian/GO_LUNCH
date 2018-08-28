@@ -1,0 +1,52 @@
+  <% @conversation.messages.each do |message| %>
+<div class=" <%= message.user == current_user ? "incoming_msg " : "outgoing_msg" %>">
+              <div class=" <%= message.user == current_user ? "incoming_msg_img" : " outgoing_msg_img" %>">
+                <% if message.user == current_user %>
+                  <%= cl_image_tag(current_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+                  <% else %>
+                  <%= cl_image_tag(@other_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+                  <% end %>
+              </div>
+              <div class=" <%= message.user == current_user ? "received_msg" : "outgoing_msg" %>">
+                <div class=" <%= message.user == current_user ? "received_withd_msg" : "sent_msg" %>">
+                  <p><%= message.body %></p>
+                  <span class="time_date"><%= message.user.email%></span></div>
+              </div>
+            </div>
+
+
+
+
+<div class="chatcontainer ">
+
+<div id="messages" class="Content">
+  <% @conversation.messages.each do |message| %>
+    <% if message.body %>
+      <div class="media">
+        <div class="media-body <%= message.user == current_user ? "chatcontainer darker " : "chatcontainer" %>">
+          <div class="">
+
+            <% if message.user == current_user %>
+            <%= cl_image_tag(current_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+            <% else %>
+            <%= cl_image_tag(@other_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
+            <% end %>
+          </div>
+          <div class="">
+          <h5><%= message.user.email%></h5>
+          <p><%= message.body %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="form-group ">
+    <%= f.text_area :body, autofocus: true, placeholder: "Your message", class: "form-control", rows: 5 %>
+  </div>
+
+  <%= f.submit "Send", class: "btn btn-primary pull-right" %>
+<% end %>
+
+</div>
