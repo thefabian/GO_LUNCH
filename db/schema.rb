@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_203006) do
+ActiveRecord::Schema.define(version: 2018_08_28_154534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_203006) do
     t.string "first_name"
     t.string "last_name"
     t.string "job_title"
-    t.string "department"
     t.string "location"
     t.text "description"
     t.bigint "company_id"
@@ -96,7 +95,10 @@ ActiveRecord::Schema.define(version: 2018_08_27_203006) do
     t.bigint "user_id"
     t.float "latitude"
     t.float "longitude"
+    t.bigint "department_id"
+    t.string "email"
     t.index ["company_id"], name: "index_profiles_on_company_id"
+    t.index ["department_id"], name: "index_profiles_on_department_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -133,6 +135,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_203006) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "companies"
+  add_foreign_key "profiles", "departments"
   add_foreign_key "profiles", "users"
   add_foreign_key "requests", "lunches"
   add_foreign_key "requests", "users"

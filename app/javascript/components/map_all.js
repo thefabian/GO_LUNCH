@@ -10,7 +10,7 @@ if (document.getElementById("map_all")) {
   center: [lng, lat],
   // center: [13, 52],
   style: 'mapbox://styles/mapbox/streets-v10',
-  Zoom: 6
+  minZoom: 13
   });
 
   var marker = new mapboxgl.Marker()

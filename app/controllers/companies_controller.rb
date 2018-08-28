@@ -23,13 +23,14 @@ class CompaniesController < ApplicationController
    end
 
   def update
+    @profile = Profile.find_by(user: current_user)
     @company = Company.find(params[:id])
     @company.update(company_params)
     Department.where(id: params[:company][:departments]).each do |department|
      @company.departments << department
     end
     if @company.save
-     redirect_to  companies_path(@profile)
+     redirect_to  profile_path(@profile)
     else
      render :edit
     end

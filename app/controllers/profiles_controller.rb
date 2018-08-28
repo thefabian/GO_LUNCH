@@ -7,9 +7,6 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-    Profile.find(id: params[:profile][:departments]).each do |department|
-     @profile.department
-    end
     @profile.user = current_user
     @profile.email = current_user.email
     if @profile.save
@@ -30,9 +27,6 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find_by(user: current_user)
     @profile.update(profile_params)
-    Profile.find(id: params[:profile][:department_id]).each do |department|
-     @profile.department
-    end
     if @profile.save
      redirect_to profile_path(@profile)
     else
