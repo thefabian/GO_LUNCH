@@ -8,7 +8,7 @@
         <div class="avatar-flip">
           <img src="http://media.idownloadblog.com/wp-content/uploads/2012/04/Phil-Schiller-headshot-e1362692403868.jpg" height="150" width="150">
         </div>
-       <div class="header-line">
+       <div class="header-line" style=" position: relative;">
                   <p class="header-line" style="text-align: center; background-color: #fff !important;">
                     <span id="select-date" style="background-color: #fff !important;">Wed. Aug. 29.</span>
                   </p>
@@ -29,9 +29,7 @@
         <span class="location">Location of the event</span>
       </div>
       <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
-      <div class="card" id="map_small" data-lat="13" data-lng="52">
-      </div>
-      <div id="map_all">
+      <div class="card" id="map_small" data-lat="<%= @profile.latitude %>" data-lng="<%= @profile.longitude %>">
       </div>
     </div>
     <br>

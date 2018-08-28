@@ -43,7 +43,8 @@
     </div>
 
     <div class="col-xs-12 col-sm-8" contenteditable="false" id="date-card">
-       <div class="lunch-date">
+       <div class="lunch-date" id="date-container">
+        <i class="fas fa-map-marked-alt click"></i>
           <h1>Your Next Lunch Date</h1>
           <h4>WED. AUG. 29. | LUNCH TYPE  outside | Ask Phil</h4>
           <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -86,6 +87,10 @@
           <div class="col-xs-12 col-md-6 col-md-offset-3">
           <%= link_to "Confirm", profile_path(current_user), class: "btn btn-primary" %>
           </div>
+        </div>
+         <div class="lunch-date hidden" id="map-container">
+           <i class="fas fa-address-card click2"></i>
+          <div class="card-large" id="map_all" data-lat="<%= @profile.latitude %>" data-lng="<%= @profile.longitude %>"></div>
         </div>
         <div class="form-post" id="messages">
           <h1>Messages</h1>

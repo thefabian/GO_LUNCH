@@ -7,10 +7,10 @@ if (document.getElementById("map_small")) {
   mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dGlmaXNjaGVyMSIsImEiOiJjamt3ZHI5bzMweHFjM2twM2JrdGhuZ2NwIn0.aWxD9TcyXXVSTeUCqHe4Ww';
   var map = new mapboxgl.Map({
   container: 'map_small',
-  // center: [lng, lat],
-  center: [13, 52],
+  center: [lng, lat],
+  // center: [13, 52],
   style: 'mapbox://styles/mapbox/streets-v10',
-  minZoom: 22
+  Zoom: 6
   });
 
   var marker = new mapboxgl.Marker()
