@@ -55,9 +55,6 @@ company = Company.create!(
 #   remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Bruce_Willis_by_Gage_Skidmore_3.jpg/440px-Bruce_Willis_by_Gage_Skidmore_3.jpg",
 #   admin: true,)
 
-puts "You have created #{Profile.count} profiles."
-
-
 dp1 = Department.new(department: "Human Resources", company: company)
 dp1.save!
 
@@ -96,11 +93,11 @@ dp.save!
 
 puts "Creating profile..."
 
-profile = Profile.create!(
+profile_1 = Profile.create!(
   first_name: 'Jesus',
   last_name: 'Christ',
   company: company,
-  department: dp1,
+  department_id: dp1.id,
   job_title: "Messiah",
   location: 'Himmel',
   description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
@@ -109,11 +106,11 @@ profile = Profile.create!(
   admin: true)
 
 
-profiles = Profile.create!(
+profile_2 = Profile.create!(
   first_name: 'Maria',
   last_name: 'von Bethlehem',
   company: company,
-  department: dp2,
+  department_id: dp2.id,
   job_title: "Josef's bitch",
   location: 'Himmel',
   description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
@@ -121,3 +118,18 @@ profiles = Profile.create!(
   remote_photo_url: "https://images.pexels.com/photos/1183099/pexels-photo-1183099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
   admin: true
   )
+
+profile_3 = Profile.create!(
+  first_name: 'Josef',
+  last_name: 'von Bethlehem',
+  company: company,
+  department_id: dp2.id,
+  job_title: "Maria's pimp",
+  location: 'Himmel',
+  description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
+  user_id: user_3.id,
+  remote_photo_url: "https://images.pexels.com/photos/1183099/pexels-photo-1183099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+  admin: true
+  )
+
+puts "You have created #{Profile.count} profiles."
