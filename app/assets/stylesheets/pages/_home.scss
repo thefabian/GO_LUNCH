@@ -36,25 +36,32 @@ header.masthead p {
   border: 0px !important;
 }
 
+.btn-primary:hover {
+  border: 1px solid #fff !important;
+}
+
 #btn-landing {
-  margin-top: 180px;
+  margin-top: 160px;
+  color: #fff !important;
+  background-color: rgba(255,255,255, 0.0) !important;
   width: 260px;
   height: 58px;
   text-align: center;
+  vertical-align: center;
   text-transform: uppercase;
   background-color: transparent;
   letter-spacing: 2px;
   justify-content: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-bottom: 21px !important;
+  padding-top: 20px !important;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
 }
 
 #btn-landing:hover {
-  transition: 1.3s;
-  background-color: #fff;
-  color: #484848;
+  transition: 1.3s !important;
+  background-color: #fff !important;
+  color: #484848 !important;
   border: 1px solid #fff !important;
 }
 

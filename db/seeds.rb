@@ -32,6 +32,7 @@ company = Company.create!(
   address: 'abc',
   locations: "hamburg",
   email: 'Hamburg@GMAIL.COM',
+  price: 100,
   # employee_range: "1-50 employees"
   # remote_photo_url: "https://www.google.de/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
 )
