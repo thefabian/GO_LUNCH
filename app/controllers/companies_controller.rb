@@ -5,13 +5,19 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.new(company_params)
-    Department.where(id: params[:company][:departments]).each do |department|
-     @company.departments << department
-    end
+    company_ids = company_params[:departments]
+    params_wothout_dep_ids = company_params.dup.except(:departments)
+    @company = Company.new(params_wothout_dep_ids)
 
     if @company.save
-      # current_user.profile.company = @company
+      company_ids.each do |dep_index|
+        unless dep_index == ""
+          name = Department.find(dep_index).department
+          dep = Department.create(department: name, company: @company)
+          @company.departments << dep
+          @company.save
+        end
+      end
       redirect_to companies_path(@profile)
     else
       render :new
@@ -25,21 +31,32 @@ class CompaniesController < ApplicationController
   def update
     @profile = Profile.find_by(user: current_user)
     @company = Company.find(params[:id])
-    @company.update(company_params)
-    Department.where(id: params[:company][:departments]).each do |department|
-     @company.departments << department
-    end
-    if @company.save
-     redirect_to  profile_path(@profile)
+
+    company_ids = company_params[:departments]
+    params_wothout_dep_ids = company_params.dup.except(:departments)
+
+    # 1 build an array of names for the existing departments of @company
+    # 2 add condition in the unless which does not enter the block if dep index is included in the
+
+    if @company.update(params_wothout_dep_ids)
+      company_ids.each do |dep_index|
+        unless dep_index == ""
+          name = Department.find(dep_index).department
+          dep = Department.create(department: name, company: @company)
+          @company.departments << dep
+          @company.save
+        end
+      end
+      redirect_to profile_path(@profile)
     else
-     render :edit
+      render :new
     end
   end
 
   private
 
   def company_params
-    params.require(:company).permit(:name, :address, :locations, :email, :employee, :photo, :department_ids => [])
+    params.require(:company).permit(:name, :address, :locations, :email, :employee, :photo, :departments => [])
   end
 end
 
