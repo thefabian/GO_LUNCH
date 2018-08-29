@@ -1,19 +1,13 @@
 
-
-
-
-
-
-
 .newcontainer{max-width:70%;
-  padding-top: 70px;
+  padding-top: 50px;
   margin:auto;
 }
 
 img{ max-width:100%;}
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
-  float: left;
+
   overflow: hidden;
   // width: 40%; border-right:1px solid #c4c4c4;
 }
@@ -60,11 +54,11 @@ img{ max-width:100%;}
   margin: 8px 0 0;
 }
 .received_withd_msg { width: 57%;}
-.mesgs {
-  float: left;
-  padding: 30px 15px 0 25px;
-  // width: 60%;
-}
+// .mesgs {
+//   float: left;
+//   padding: 30px 15px 0 25px;
+
+// }
 
  .sent_msg p {
   background: #4a9bdd none repeat scroll 0 0;
@@ -72,12 +66,13 @@ img{ max-width:100%;}
   font-size: 14px;
   margin: 0; color:#fff;
   padding: 5px 10px 5px 12px;
-  width:100%;
+  width:95%;
 }
 .outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+
 .sent_msg {
   float: right;
-  width: 46%;
+  width: 40%;
 }
 .input_msg_write input {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -103,6 +98,7 @@ img{ max-width:100%;}
   width: 33px;
 }
 .messaging { padding: 0 0 50px 0;}
+
 .msg_history {
   height: 516px;
   overflow-y: auto;
