@@ -1,0 +1,9 @@
+function showMessages(){
+  console.log("in create.js")
+const messagesContainer = document.getElementById("messagescontainer")
+messagescontainer.innerHTML = '<%= j render "shared/message_container", conversation: @conversation, message: @message %>'
+}
+
+showMessages();
+
+

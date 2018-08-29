@@ -3,6 +3,7 @@ class ConversationsController < ApplicationController
 def index
   @users = User.where.not(id: current_user.id)
   @conversations = policy_scope(Conversation).where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+  @message = Message.new
 end
 
 def create
@@ -13,8 +14,12 @@ def create
     @conversation = Conversation.create!(conversation_params)
     authorize @conversation
   end
-  redirect_to conversation_messages_path(@conversation)
+  @message = Message.new
   authorize @conversation
+  # respond_to do |format|
+  #     format.html { redirect_to conversation_messages_path(@conversation) }
+  #     format.js  # <-- will render `app/views/conversations/create.js.erb`
+  end
 end
 
 private

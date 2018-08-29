@@ -7,7 +7,7 @@
       <div class="inbox_people">
         <div class="mesgs">
           <div class="msg_history">
-            <% @conversation.messages.each do |message| %>
+            <% conversation.messages.each do |message| %>
             <% if message.body %>
             <div class=" <%= message.user == current_user ? "incoming_msg " : "outgoing_msg" %>">
               <div class=" <%= message.user == current_user ? "incoming_msg_img" : " outgoing_msg_img" %>">
@@ -30,11 +30,11 @@
           </div>
         </div>
         <div class="type_msg">
-          <%= form_for [@conversation, @message] do |f| %>
+          <%= form_for [conversation, message] do |f| %>
           <div class="input_msg_write">
             <%= f.text_area :body, autofocus: true,class: "form-control text-right", id: "exampleFormControlTextarea1", rows: "3" ,placeholder: "Type a message"%>
           </div>
-          <%= f.submit "send", class: "btn btn-primary float-right", value: "Submit"%>
+          <%= f.submit "send",remote: true, class: "btn btn-primary float-right", value: "Submit"%>
           <% end %>
         </div>
       </div>

@@ -120,3 +120,16 @@ profiles = Profile.create!(
   remote_photo_url: "https://images.pexels.com/photos/1183099/pexels-photo-1183099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
   admin: true
   )
+
+profiles = Profile.create!(
+  first_name: 'Maria',
+  last_name: 'von Bethlehem',
+  company: company,
+  department: dp2,
+  job_title: "Josef's bitch",
+  location: 'Himmel',
+  description: 'The Badeschiff is a floating public swimming pool in Berlin, the capital city of Germany. Situated in the East Harbour section of the River Spree, the Badeschiff allows citizens to swim in a sanitary environment near the river.',
+  user_id: user_3.id,
+  remote_photo_url: "https://images.pexels.com/photos/1183099/pexels-photo-1183099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350",
+  admin: true
+  )
