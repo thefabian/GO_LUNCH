@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_154534) do
     t.string "first_name"
     t.string "last_name"
     t.string "job_title"
+    t.string "department"
     t.string "location"
     t.text "description"
     t.bigint "company_id"
