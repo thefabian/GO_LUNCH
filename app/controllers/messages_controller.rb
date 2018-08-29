@@ -10,6 +10,13 @@ class MessagesController < ApplicationController
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
     @message = @conversation.messages.new
+
+    if @conversation.sender_id == current_user.id
+      @other_user = User.find(@conversation.receiver_id)
+    else
+      @other_user = User.find(@conversation.sender_id)
+    end
+
   end
 
   def create
