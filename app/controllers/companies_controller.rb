@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
         unless dep_index == ""
           name = Department.find(dep_index).department
           dep = Department.create(department: name, company: @company)
-          @company.departments << dep
+          @company.departments << dep unless @company.departments.include?(Department.find_by(department: name))
           @company.save
         end
       end
@@ -43,7 +43,7 @@ class CompaniesController < ApplicationController
         unless dep_index == ""
           name = Department.find(dep_index).department
           dep = Department.create(department: name, company: @company)
-          @company.departments << dep
+          @company.departments << dep unless @company.departments.include?(Department.find_by(department: name))
           @company.save
         end
       end
