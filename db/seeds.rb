@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroy all data."
-Lunch.destroy_all
 Availability.destroy_all
 Request.destroy_all
+Lunch.destroy_all
+Profile.destroy_all
 Department.destroy_all
 Location.destroy_all
-Profile.destroy_all
 Company.destroy_all
 Conversation.destroy_all
 Message.destroy_all

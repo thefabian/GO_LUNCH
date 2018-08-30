@@ -19,7 +19,7 @@
           <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p>Company</p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">location</strong></span><span id="right-side"><%= @profile.location%></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">job title</strong></span><span id="right-side"> <%= @profile.job_title %></span></p></li>
-          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">department </strong></span><span id="right-side"><%= Department.find(@profile.department_id).department %></span></p></li>
+          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">department </strong></span><span id="right-side"><%= @profile.department.department %></span></p></li>
           <li class="list-group-item text-muted" id="top-border"><span><p><strong class="group-name"></strong></span><span id="right-side"></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunch typ</strong></span><span id="right-side">outside</span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunches</strong></span><span id="right-side"> 10</span></p></li>
