@@ -2,13 +2,13 @@
   <div class="navbar-wagon-left">
     <!-- Logo -->
     <% if user_signed_in? %>
-      <% if @profile.company.photo.blank? %>
+      <% if current_user.profile.company.photo.blank? %>
           <%= link_to root_path, class: "navbar-wagon-brand" do %>
           <%= cl_image_tag("GoLunch") %>
           <% end %>
       <% else %>
         <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= cl_image_tag @profile.company.photo %>
+        <%= cl_image_tag current_user.profile.company.photo %>
         <% end %>
       <% end %>
     <% else %>
