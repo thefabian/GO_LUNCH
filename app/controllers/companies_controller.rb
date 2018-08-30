@@ -42,9 +42,11 @@ class CompaniesController < ApplicationController
       company_ids.each do |dep_index|
         unless dep_index == ""
           name = Department.find(dep_index).department
+          unless @company.departments.include?(Department.find_by(department: name))
           dep = Department.create(department: name, company: @company)
-          @company.departments << dep unless @company.departments.include?(Department.find_by(department: name))
+          @company.departments << dep
           @company.save
+           end
         end
       end
       redirect_to profile_path(@profile)

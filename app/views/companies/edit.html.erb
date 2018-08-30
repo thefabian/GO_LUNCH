@@ -32,17 +32,39 @@
             <%= f.input :locations, placeholder: 'Locations' %>
             <%= f.input :departments, required: false, as: :check_boxes, collection: Department.all, class: "collection_form", prompt: "Departmenttest", label_method: -> (department){department.department} %>
             <%= f.input :employee, collection: ["Employees 1-50", "Employees 51-200", "Employees 201-1,000", "Employees 1,001-5,000", "Employees 5000+"], class: "collection_form", prompt: "Employee range" %>
-          </div>
           <div class="form-actions">
-            <%= f.button :submit, "EDIT COMPANY", :class => "button btn btn-primary btn-block" %>
+            <button type="button" class="button btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
+              SAVE CHANGES
+            </button>
+          </div>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLabel">EDIT COMPANY ACCOUNT</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Do you like to save your current changes?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                  <%= f.button :submit, "SAVE CHANGES", :class => "button btn btn-primary" %>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="divider">
             <hr>
           </div>
-          <%= link_to "", profiles_path, class: 'fas fa-backward' %>
-        </div>
+          <%= link_to "", profile_path, class: 'fas fa-backward' %>
       </div>
       <% end %>
+        </div>
+          </div>
     </div>
   </div>
 </div>
