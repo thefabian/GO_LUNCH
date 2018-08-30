@@ -35,7 +35,7 @@ company = Company.create!(
   address: '1200 E California Blvd, Pasadena, CA 91125, USA',
   locations: "Pasadena",
   email: 'info@caltech.edu',
-  price: 100,
+  price: 100
   # employee_range: "1-50 employees"
   # remote_photo_url: "https://www.google.de/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
 )
