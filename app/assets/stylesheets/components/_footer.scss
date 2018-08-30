@@ -25,12 +25,15 @@
 }
 
 /* The company logo */
-.footer-distributed h3{
+.footer-distributed h3 {
   color:  #ffffff;
   margin: 0;
 }
-.footer-distributed h3 span{
+.footer-distributed h3 span {
   color:  $blue;
+}
+.footer-brand {
+  border-radius: 5px;
 }
 
 /* Footer links */

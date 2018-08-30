@@ -13,7 +13,6 @@
   width: 100%;
   z-index: 500;
 }
-
 .border-letter h3 span{
   color:  #ffffff;
   border: solid 1px #000000;
@@ -22,63 +21,56 @@
 .navbar-wagon-left h3{
   color:  $blue;
 }
-
 .navbar-wagon-left {
   color: $red;
 }
-
 /* Logo */
 .navbar-wagon-brand img {
+  border-radius: 5px;
   height: 35px;
-  padding: 0px 20px;
+  margin: 0px 20px;
 }
-
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
 }
-
 .navbar-wagon-search {
   padding: 0px 20px;
 }
-
 /* Left section */
 .navbar-wagon-left {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 /* Right section */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
 }
-
 /* Navbar link */
 .navbar-wagon-link {
   color: #484848 !important;
-  font-size: 14px;
+  font-size: 16px;
   border-bottom: 2px solid rgba(0,0,0, 0.0) !important;
   border-radius: 0px;
+  text-transform: uppercase;
 }
 .navbar-wagon-link:hover {
   color: #0B81CA;
   background-color: #ffffff !important;
-  border-bottom: 2px solid #484848 !important;
+  border-bottom: 2px solid #00a0e1 !important;
   text-decoration: none;
   border-radius: 0px;
 }
-
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -110,13 +102,13 @@
   border-top: 1px solid #E6E6E6;
 }
 .navbar-wagon-button {
+  text-transform: uppercase;
   background: #00a0e1;
   border: 0px solid #ffffff !important;
   border-radius: 5px;
   color: #ffffff;
-  opacity: 0.95;
-  font-size: 14px;
-  letter-spacing: .4px;
+  font-size: 16px;
+  letter-spacing: .5px;
   padding: 10px 15px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -126,7 +118,6 @@
   text-decoration: none;
   background-color: #ffffff;
   border-color: #ffffff;
-  opacity: 0.95;
 }
 #banner-typed-text {
   color: grey;
@@ -140,27 +131,22 @@
 .fa-user-circle {
   color: #616668;
 }
-
 .nav-pills {
   height: 70px;
 }
-
-
 .navbar-wagon-item {
-  color: #484848 !important;
-  padding: 25px 15px !important;
+  color: #000000 !important;
+  padding: 25px 15px 23px 15px !important;
 }
-
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   background-color: #ffffff;
   border-bottom: 2px solid #469AE0 !important;
   border-radius: 0px;
 }
-
 .bttn {
   border: 1px solid #469AE0 !important;
+  margin-left: 15px;
 }
-
 .bttn:hover {
   border: 1px solid #469AE0 !important;
 }

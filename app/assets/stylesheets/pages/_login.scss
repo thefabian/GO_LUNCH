@@ -49,12 +49,14 @@ p.header-line span {
   border-top: 1px solid #ced0d0;
 }
 .btn-primary {
+  text-transform: uppercase;
   background: #00a0e1;
   border: 1px solid #fff !important;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 5px;
   padding: 10px 15px;
+  letter-spacing: .5px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
@@ -80,4 +82,5 @@ input[type="checkbox"] {
 }
 .login-logo {
   height: 60px;
+  border-radius: 5px;
 }
