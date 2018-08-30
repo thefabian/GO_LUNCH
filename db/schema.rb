@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_172141) do
+ActiveRecord::Schema.define(version: 2018_08_29_174318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,9 @@ ActiveRecord::Schema.define(version: 2018_08_28_172141) do
     t.float "longitude"
     t.bigint "department_id"
     t.string "email"
+    t.string "facebook"
+    t.string "linkedin"
+    t.string "xing"
     t.index ["company_id"], name: "index_profiles_on_company_id"
     t.index ["department_id"], name: "index_profiles_on_department_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"

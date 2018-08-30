@@ -84,6 +84,7 @@
   }
 
   i{
+    color: #484848 !important;
     padding-top: 0px;
     padding-left: 15px;
     padding-right: 15px;
@@ -91,7 +92,7 @@
     font-size: 30px;
   }
   i:hover {
-    color: #469AE0;
+    color: #469AE0 !important;
   }
 }
 
@@ -242,6 +243,7 @@ ul, ol {
    position: relative !important;
    margin-bottom: 150px !important;
   i {
+    color: #484848 !important;
     position: absolute;
     padding: 0px;
     margin: 0px;
@@ -251,7 +253,7 @@ ul, ol {
   }
 
   i:hover {
-    color: #469AE0;
+    color: #469AE0 !important;
   }
 
   hr{
@@ -301,6 +303,7 @@ ul, ol {
 #top-border {
   border-top: 1px solid #ced0d0;
   margin-top: 23px;
+  width: 100%;
 }
 
 
@@ -367,17 +370,22 @@ ul, ol {
 }
 
 #descr {
-  font-size: 16px;
-  padding-bottom: 38px;
-  border-bottom: 1px solid #ced0d0;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block;
-  max-height: 1.0em;
-  line-height: 1.43em;
+  white-space: nowrap;
+  max-width: 100%;
+  font-size: 16px;
+  // padding-bottom: 38px;
+  // border-bottom: 1px solid #ced0d0;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // display: block;
+  // max-height: 1.0em;
+  // line-height: 1.43em;
  }
 
  #descr:hover {
-   overflow: visible;
+   // overflow: visible;
+   white-space: normal;
  }
 

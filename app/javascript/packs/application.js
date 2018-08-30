@@ -13,6 +13,8 @@ import { map } from '../components/map';
 
 import { map_all } from '../components/map_all';
 
+import { map_footer } from '../components/map_footer';
+
 
 console.log("hello")
 
