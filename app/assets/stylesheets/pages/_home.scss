@@ -90,6 +90,9 @@ header.content-header {
   justify-content: center;
   position: relative;
 }
+#banner-background-add {
+  background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1525078459500-9e1a0dd292ab?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=1754ee6a32c758d304f55414411c8864) !important;
+}
 .h2 {
   font-size: 48px;
 }
@@ -118,7 +121,7 @@ header.content-header {
   color: white;
   text-align: center;
   min-height: 300px;
-  height: 700px;
+  height: 600px;
   width: 100%;
   background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1418225162054-0f773a996f9e?ixlib=rb-0.3.5&s=3a2bd5572432b45991f5059ab2b58ad7&auto=format&fit=crop&w=1058&q=80);
   background-position: top center;
