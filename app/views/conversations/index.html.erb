@@ -1,30 +1,31 @@
+<div class="newcontainer">
 <h1>Inbox</h1>
-
-</ul>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-sm-8">
     <ul class="list-group">
+      <h3>recent messages</h3>
       <% @conversations.each do |conversation| %>
         <li class="list-group-item" data-conversation-id="<%= conversation.id %>">
-          <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
+          <%= link_to (conversation.receiver.profile.first_name + " " + conversation.receiver.profile.last_name) , conversation_messages_path(conversation) %>
           <% if !conversation.unread_message_count(current_user).zero? %>
-            <span class="badge"><%= conversation.unread_message_count(current_user) %></span>
+            <span class="badge far fa-envelope"><%= conversation.unread_message_count(current_user) %></span>
           <% end %>
         </li>
       <% end %>
     </ul>
   </div>
-  <div class="col-md-4">
+  <div class="col-sm-4">
     <div class="form-group">
-    </div>
+      <h3>your colleagues</h3>
     <ul id="users" class="list-group">
       <% @users.each do |user| %>
-        <li class="list-group-item" data-searchstring="<%= user.email %>">
-          <%= link_to user.email, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %>
+        <li class="list-group-item" data-searchstring="<%= user.email %>" >
+          <%= link_to (user.profile.first_name + " " + user.profile.last_name), conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %>
         </li>
       <% end %>
     </ul>
+    </div>
   </div>
 </div>
 
-
+</div>
