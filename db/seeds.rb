@@ -37,12 +37,6 @@ company = Company.create!(
   # remote_photo_url: "https://www.google.de/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
 )
 
-
-
-
-
-
-
 # (
 # first_name: "Bruce",
 #   last_name: 'Willis',
