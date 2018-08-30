@@ -92,10 +92,18 @@
   cursor: pointer;
 }
 
+.fa-address-card:hover {
+  color: #3CA1E0 !important;
+}
+
 .fa-map-marked-alt {
   position: absolute;
   bottom: 10px;
   right: 10px;
   font-size: 25px;
   cursor: pointer;
+}
+
+.fa-map-marked-alt:hover {
+  color: #3CA1E0 !important;
 }
