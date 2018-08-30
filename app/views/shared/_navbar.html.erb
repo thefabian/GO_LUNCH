@@ -24,7 +24,7 @@
           <i class="far fa-user-circle"></i>
         </div>
         <% else %>
-        <%= cl_image_tag current_user.profile.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag current_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"}], class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>

@@ -3,9 +3,9 @@
     <div class="col-xs-12 col-sm-4" id="profile-design">
       <div class="profile-card">
         <div class="user-pic">
-          <a href="/users" class="avatar-user">
-            <%= cl_image_tag(@profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
-          </a>
+          <div class="avatar-user">
+            <%= cl_image_tag(@profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"}]) %>
+          </div>
         </div>
         <div class="pen">
           <%= link_to edit_profile_path do %>
@@ -33,10 +33,10 @@
             <%#= link_to @pofile.facebook do %>
             <i class="fab fa-facebook fa-3x"></i>
             <%# end %>
-            <%#= link_to @pofile.facebook do %>
+            <%#= link_to @pofile.linked do %>
             <i class="fab fa-linkedin fa-3x"></i>
             <%# end %>
-            <%#= link_to @pofile.facebook do %>
+            <%#= link_to @pofile.xing do %>
             <i class="fab fa-xing-square fa-3x"></i>
             <%# end %>
           </div>
@@ -73,7 +73,7 @@
               <section>
                 <div class="col-md-12">
                   <div class="panel-group"  id="lunch-profile">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default-1">
                       <div class="accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question0" data-toggle="collapse">
                         <h3 class="panel-name">
                           <a href="#question0" name="question0" class="panel-head"></a>
@@ -83,7 +83,7 @@
                       <div class="panel-collapse collapse" id="question0">
                         <div class="panel-lunch">
                           <h4><%= current_user.next_lunch.other_user(current_user).profile.job_title %></h4>
-                          <p><%= current_user.next_lunch.other_user(current_user).profile.department %></p>
+                          <p><%= current_user.next_lunch.other_user(current_user).profile.department_id %></p>
                           <hr id="hr-conf">
                           <p><%= current_user.next_lunch.other_user(current_user).profile.description %></p>
                         </div>
@@ -93,10 +93,15 @@
                 </div>
               </section>
               <div class="icons-lunch-date">
+                <%#= link_to @pofile.facebook do %>
                 <i class="fab fa-facebook"></i>
+                 <%# end %>
+                <%#= link_to @pofile.linkedin do %>
                 <i class="fab fa-linkedin"></i>
+                 <%# end %>
+                <%#= link_to @pofile.xing do %>
                 <i class="fab fa-xing-square"></i>
-                <i class="fab fa-google-plus"></i>
+                 <%# end %>
               </div>
             </div>
           </div>
@@ -116,7 +121,7 @@
    <div class="form-post" id="messages">
     <h1>Messages</h1>
     <%= link_to conversations_path do %>
-          <i class="far fa-edit"></i>
+          <i class="far fa-edit" id="imes"></i>
     <% end  %>
     <div class="row message-cards avatar-user">
       <div class="">
