@@ -13,34 +13,33 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "Pricing", pricing_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Lunches", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "New Lunch", new_request_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Messages", conversations_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <% if current_user.photo.blank? %>
+        <% if current_user.profile.photo.blank? %>
         <div class="dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <i class="far fa-user-circle"></i>
         </div>
         <% else %>
-        <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= cl_image_tag current_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"}], class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to profile_path(current_user) do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "PROFILE") %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <%= link_to edit_company_path(current_user.profile.company) do %>
+            <i class="fa fa-cog"></i>  <%= t(".settings", default: "EDIT COMPANY") %>
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "LOG OUT") %>
             <% end %>
           </li>
         </ul>
