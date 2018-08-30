@@ -1,45 +1,43 @@
 <div class="newcontainer">
 
-<h3 class="text-right"><%= @other_user.profile.first_name + " " + @other_user.profile.last_name%></h3>
-  <i class="fas fa-arrow-left"><%= link_to "Messages", conversations_path %> </i>
-
-  <div class="messaging">
-    <div class="inbox_msg">
-      <div class="inbox_people">
-        <div class="mesgs">
-          <div class="msg_history">
-            <% @conversation.messages.each do |message| %>
-            <% if message.body %>
-            <div class=" <%= message.user == current_user ? "incoming_msg " : "outgoing_msg" %>">
-              <div class=" <%= message.user == current_user ? "incoming_msg_img" : " outgoing_msg_img" %>">
-                <% if message.user == current_user %>
-                <%= cl_image_tag(current_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
-                <% else %>
-                <%= cl_image_tag(@other_user.profile.photo, :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
-                <% end %>
-              </div>
-            </div>
-            <div class=" <%= message.user == current_user ? "outgoing_msg" : "received_msg" %>">
-              <div class=" <%= message.user == current_user ? "sent_msg" : "received_withd_msg" %>">
-
-                <p><%= message.body %></p>
-                <p><%= message.user.profile.first_name + " " + message.user.profile.last_name%></p>
-                <% end %>
-              </div>
-            </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="type_msg">
-          <%= form_for [@conversation, @message] do |f| %>
-          <div class="input_msg_write">
-            <%= f.text_area :body, autofocus: true,class: "form-control text-right ", id: "exampleFormControlTextarea1", rows: "3" ,placeholder: "Type a message"%>
-          </div>
-          <%= f.submit "send", class: "btn btn-primary pull-right", value: "Submit"%>
-          <% end %>
-        </div>
+  <div class="message-flex">
+    <i class="fas fa-arrow-left"><span style="font-family:Open Sans" ><%= link_to "Messages", conversations_path %> </i>
+      <div class="message-flex-name">
+        <h3 class="text-right"><%= @other_user.profile.first_name + " " + @other_user.profile.last_name%></h3>
+        <%= cl_image_tag(@other_user.profile.photo, class: "avatar", :transformation=>[{:width=>1200, :height=>1200, :gravity=>"face", :radius=>"max", :crop=>"crop"},]) %>
       </div>
 
     </div>
+
+
+    <div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="mesgs">
+            <div class="msg_history">
+              <% @conversation.messages.each do |message| %>
+              <% if message.body %>
+              <div class=" <%= message.user == current_user ? "outgoing_msg" : "received_msg" %>">
+                <div class=" <%= message.user == current_user ? "sent_msg" : "received_withd_msg" %>">
+
+                  <h5><%= message.body %></h5>
+                  <p><%= message.user.profile.first_name + " " + message.user.profile.last_name%></p>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="type_msg">
+            <%= form_for [@conversation, @message] do |f| %>
+            <div class="input_msg_write">
+              <%= f.text_area :body, autofocus: true,class: "form-control text-right messeagebox ", id: "exampleFormControlTextarea1", rows: "3" ,placeholder: "Type a message"%>
+            </div>
+            <%= f.submit "send", class: "btn btn-primary pull-right", value: "Submit"%>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-</div>
