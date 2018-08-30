@@ -117,60 +117,57 @@
     <div class="lunch-date hidden" id="map-container">
      <i class="fas fa-address-card click2"></i>
      <div class="card-large" id="map_all" data-lat="<%= @profile.latitude %>" data-lng="<%= @profile.longitude %>"></div>
-   </div>
-   <div class="form-post" id="messages">
+    </div>
+
+    <div class="form-post" id="messages">
     <h1>Messages</h1>
     <%= link_to conversations_path do %>
           <i class="far fa-edit" id="imes"></i>
     <% end  %>
+    <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).limit(3).each do |conversation| %>
     <div class="row message-cards avatar-user">
       <div class="">
-        <img alt="300x200" src="https://source.unsplash.com/300x200/?portrait" class="avatar-user">
-        <div class="caption">
-          <h3>
-            Robert Lewandowski
-          </h3>
-          <p>
-            "Gonna score next game, I promise!"
-          </p>
-          <h4>Mittwoch</h4>
-          <i class="fas fa-angle-right"></i>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="row message-cards avatar-user">
-      <div class="">
-        <div class="caption">
-          <div class="img-review">
-            <img alt="300x200" src="https://source.unsplash.com/300x200/?face">
+        <% if conversation.receiver == current_user %>
+          <%= cl_image_tag(conversation.sender.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+          <div class="caption">
+            <h3>
+              <%= conversation.sender.profile.first_name  + " " + conversation.sender.profile.last_name %>
+            </h3>
+            <p>
+              <% if conversation.messages.last.user == current_user %>
+              <%= "You: " + conversation.messages.last.body %>
+              <% else %>
+              <%= conversation.messages.last.body %>
+              <% end %>
+            </p>
+             <%= link_to conversation_messages_path(conversation) do %>
+              <i class="fas fa-angle-right"></i>
+            <% end %>
           </div>
-          <h3>
-            Frank Ribery
-          </h3>
-          <p>
-            "Do you like to lunch sometime soon?"
-          </p>
-          <h4>Dienstag</h4>
-          <i class="fas fa-angle-right"></i>
+        <% else %>
+          <%= cl_image_tag(conversation.receiver.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+          <div class="caption">
+            <h3>
+              <%= conversation.receiver.profile.first_name  + " " + conversation.receiver.profile.last_name %>
+            </h3>
+            <p>
+              <% if conversation.messages.last.user == current_user %>
+              <%= "You: " + conversation.messages.last.body %>
+              <% else %>
+              <%= conversation.messages.last.body %>
+              <% end %>
+            </p>
+            <%= link_to conversation_messages_path(conversation) do %>
+              <i class="fas fa-angle-right"></i>
+            <% end %>
+          </div>
+          <% end %>
         </div>
       </div>
-    </div>
     <hr>
-    <div class="row message-cards avatar-user">
-      <div class="">
-        <img alt="200x200" src="https://source.unsplash.com/200x200/?profile">
-        <div class="caption">
-          <h3>
-            Arjen Robben
-          </h3>
-          <p>
-            "Pls tell me the name of the restaurant again."
-          </p>
-          <h4>Montag</h4>
-          <i class="fas fa-angle-right"></i>
-        </div>
-      </div>
+    <% end %>
+    </div>
+
     </div>
   </div>
 <!--   <div class="card" id="map_footer">
