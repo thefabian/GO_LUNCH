@@ -8,13 +8,21 @@
       <% @conversations.each do |conversation| %>
         <li class="list-group-item" data-conversation-id="<%= conversation.id %>">
           <%= link_to conversation_messages_path(conversation) do %>
-            <%= cl_image_tag(conversation.receiver.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+          <% if conversation.receiver == current_user %>
+            <%= cl_image_tag(conversation.sender.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+            <%= conversation.sender.profile.first_name %>
+
+            <%= conversation.sender.profile.last_name %>
+            <% else %>
+             <%= cl_image_tag(conversation.receiver.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
             <%= conversation.receiver.profile.first_name %>
+
             <%= conversation.receiver.profile.last_name %>
+            <% end %>
             <i class="far fa-edit"></i>
           <% end %>
           <% if !conversation.unread_message_count(current_user).zero? %>
-            <span class="badge far fa-envelope"><%= conversation.unread_message_count(current_user) %></span>
+            <span class="badge far fa-envelope"><span style="font-family:Open Sans" ><%= conversation.unread_message_count(current_user) %></span>
           <% end %>
         </li>
       <% end %>
