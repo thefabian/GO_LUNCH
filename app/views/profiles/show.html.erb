@@ -16,7 +16,7 @@
           <h3 id="profile-name"><%= @profile.first_name %> <%= @profile.last_name  %></h3>
         </div>
         <ul class="list-group" id="top-border">
-          <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p>Company</p></li>
+          <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p><%= @profile.company.name %></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">location</strong></span><span id="right-side"><%= @profile.location%></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">job title</strong></span><span id="right-side"> <%= @profile.job_title %></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">department </strong></span><span id="right-side"><%= @profile.department.department %></span></p></li>
