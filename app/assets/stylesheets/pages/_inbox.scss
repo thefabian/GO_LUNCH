@@ -4,19 +4,28 @@
   margin:auto;
 }
 
+.inboxcontainer{;
+
+  background: #ffffff;
+  height: 516px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
 img{ max-width:100%;}
 .inbox_people {
-  background: #f8f8f8 none repeat scroll 0 0;
+  background: #ffffff none repeat scroll 0 0;
 
   overflow: hidden;
   // width: 40%; border-right:1px solid #c4c4c4;
 }
 .inbox_msg {
-  border: 1px solid #c4c4c4;
+  border-radius: 5px ;
   clear: both;
   overflow: hidden;
 }
 .top_spac{ margin: 20px 0 0;}
+
 
 
 
@@ -102,4 +111,21 @@ img{ max-width:100%;}
 .msg_history {
   height: 516px;
   overflow-y: auto;
+}
+
+
+
+
+.list-group-flush .list-group-item {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+.list-group-flush:first-child .list-group-item:first-child {
+  border-top: 0;
+}
+
+.list-group-flush:last-child .list-group-item:last-child {
+  border-bottom: 0;
 }
