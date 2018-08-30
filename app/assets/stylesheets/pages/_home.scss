@@ -30,12 +30,6 @@ header.headline {
 header.content-header {
   padding-bottom: 30px;
 }
-.btn-primary {
-  border: 0px !important;
-}
-.btn-primary:hover {
-  border: 1px solid #fff !important;
-}
 #btn-banner {
   margin-top: 30px;
   width: 250px;
@@ -44,14 +38,16 @@ header.content-header {
   vertical-align: center;
   text-transform: uppercase;
   background-color: transparent;
+  border-color: #ffffff !important;
   letter-spacing: 2px;
   padding-top: 14px;
+  border: 1px solid #ffffff !important;
+  font-size: 16px;
 }
 #btn-banner:hover {
-  transition: 1.3s !important;
-  background-color: #fff !important;
-  color: #484848 !important;
-  border: 1px solid #fff !important;
+  color: #000000 !important;
+  background-color: #ffffff;
+  border: 1px solid #ffffff !important;
 }
 .padded {
   padding-top: 4em;

@@ -5,7 +5,11 @@
         <strong>Go Lunch</strong>
       </h1>
       <p>Up for something new? Set up a lunch with Go Lunch and meet awesome colleagues.</p>
-      <%= link_to "Sign Up Now", pricing_path, class: "btn btn-primary btn-xl", id:"btn-banner" %>
+      <% if user_signed_in? %>
+        <%= link_to "New Lunch", new_request_path, class: "btn btn-primary btn-xl", id:"btn-banner" %>
+      <% else %>
+        <%= link_to "Sign Up Now", pricing_path, class: "btn btn-primary btn-xl", id:"btn-banner" %>
+      <% end %>
     </div>
   </div>
 </header>
