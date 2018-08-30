@@ -1,294 +1,276 @@
-<header class="masthead">
-      <div class="container my-auto">
-        <div class="row ">
-          <div class="mx-auto">
-            <h1 class="text-uppercase">
-              <strong>GO LUNCH</strong>
-            </h1>
-            <h4>Up for something new? Set up a redomized lunch with GoLuncher</h4>
-            <h4>and meet awesome colleagues.</h4>
-          </div>
-          <div class="mx-auto banner-content">
-             <%= link_to "Find Out More", pricing_path, class: "btn btn-primary btn-xl", id:"btn-landing" %>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section id="how-it-works">
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto text-center br-cust">
-            <h2 class="section-heading">HOW  IT  WORKS</h2>
-            <p>GO LUNCH works like a digital lottery - It automatically selects two people from different departments and matches them for a lunch date. </p>
-            <p>All it takes is three steps...</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4 text-center">
-            <div class="mx-auto">
-              <i class="fat far fa-edit fa-3x"></i>
-              <h3 class="mb-3">Registration</h3>
-              <p class="description-lp">Register online and set up your profile.</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 text-center">
-            <div class="mx-auto">
-              <i class="fat far fa-calendar-alt fa-3x cirlce"></i>
-              <h3 class="mb-3">Pick a date</h3>
-              <p class="description-lp">Schedule an event from the list of dates offered</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 text-center">
-            <div class="mx-auto">
-              <i class="fat fa fa-3x far fa-handshake cirlce"></i>
-              <h3 class="mb-3">Meet new people</h3>
-              <p class="description-lp">Get to know your lunch buddy.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="banner-lp">
-      <div class="layer"></div>
-      <div class="container text-center padded features teaser is-inverted">
-        <div class="h2 h text-center">learn something new every lunch</div>
-      </div>
+<header class="banner">
+  <div class="banner-content col-xs-12 col-md-6">
+    <div class="content-header">
+      <h1 class="text-uppercase headline">
+        <strong>Go Lunch</strong>
+      </h1>
+      <p>Up for something new? Set up a lunch with Go Lunch and meet awesome colleagues.</p>
+      <%= link_to "Sign Up Now", pricing_path, class: "btn btn-primary btn-xl", id:"btn-banner" %>
     </div>
-    <section id="benefits">
-      <section class="bg-primary" id="about">
-        <div class="container">
-          <div class="row">
-            <div class=" text-center" id="desc1">
-              <h2 class="section-heading text-white">We've got what you need!</h2>
-              <p class="text-faded mb-4 col-md-10 col-md-offset-1 ">We all know it ... the bigger the company we work for, the less we know what is going on in departments outside of our sphere. But no worries, help is on the way. Casual meetings can improve the communication between departments which will open in fruitful collaborations and more empathy for our colleagues.</p>
-              <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto text-center br-cust">
-            <h2 class="section-heading">Benefits</h2>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4 text-center">
-            <div class="mx-auto">
-              <i class="fat far fa-4x  fa-lightbulb"></i>
-              <h3 class="mb-3">Be part of innovation</h3>
-              <p class="description-lp">Support collective intelligence, exchange your knowledge and look for new horizons.</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 text-center">
-            <div class="mx-auto">
-              <i class="fat fas fa-4x fa-rocket"></i>
-              <h3 class="mb-3">Grow as a person</h3>
-              <p class="description-lp">Get to know new talents and develop as a role model.</p>
-            </div>
-          </div>
-           <div class="col-xs-12 col-sm-4 text-center">
-            <div class="mx-auto">
-              <i class="far fa-4x fa-smile"></i>
-              <h3 class="mb-3">Have fun</h3>
-              <p class="description-lp">...and enjoy your lunch time</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="banner-faq">
-      <div class="layer"></div>
-      <div class="container text-center padded features teaser is-inverted">
-        <div class="h2 h text-center">get to know the people you work with</div>
-      </div>
-    </div>
-    <section id="faq">
-      <div class = "mx-auto text-center">
-        <h2 class="section-heading br-cust">FREQUENTLY ASKED QUESTIONS</h2>
-        <div class="col-md-8 col-md-offset-2">
-          <div class="panel-group"  id="faq-table">
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question0" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question0" name="question0" class="panel-head"></a>
-                <i class="fas fa-angle-down" id="arrow"></i> Why should we use GoLunch?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question0">
-                <div class="panel-body1">
-                  <p>The bigger the company, the less we know what is going on in departments outside of our own sphere. It’s simple to settle for the status quo – lunch with the same people, or worse, the very sad lunch at your desk. We communicate with the same people, have lunch with the same people, and talk to the same people every day. The result?  A lack of knowledge exchange and friendship between departments, which often times leads to a “silo mentality” and can block the flow of innovation. Regular casual meetings will improve the communication between departments and might lead to new collaborations and projects. And, last but not least, you can meet new people! Who knows? You might even meet your new best friend!</p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question1" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question1" name="question1" class="panel-head"></a>
-                  <i class="fas fa-angle-down arrow"></i> I’m interested! Tell me why I should sign up today.
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question1">
-                <div class="panel-body1">
-                  <p>
-                  Besides the general advantage of getting to know other colleagues and make new friends, Luncher will offer support to us on challenges we are currently facing. How? Well, here are a few examples:
-                  </p>
-                  <p>
-                  The best ideas emerge when different perspectives are shared. Open-ended discussions between employees from different departments and hierarchy levels provide a good platform for the development of creative thoughts. Meeting new people helps us understand each other better and expands our horizons – Luncher can offer us a way to connect, learn, and grow from one another.
-                  </p>
-                  <p>
-                  For new employees, it can be intimidating to start anew in a new place. We’ve all been there before.  Not only is it  important to establish a network quickly within the company, it’s essential to have an understanding of the responsibilities and challenges of different departments. Better cross-department understanding is an essential part of a successful integration. The benefits of Luncher aren’t limited to professional development – it’s also designed to help us meet new people in the hopes of turning acquaintances into friends.,  New  jobs are often accompanied with relocation to a new city. The social aspect of life like making friends and acquaintances has to be completely rebuilt in a brand new place. With Luncher meeting new people on a regular basis (i.e. over lunch or for an after-work beer) can help make that process a little less scary.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question2" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question2" name="question2" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> How do I schedule a lunch?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question2">
-                <div class="panel-body1">
-                  <p>
-                  You can schedule a lunch on your personal dashboard when you are logged in. Click on the button 'Schedule Luncher' and select a date and location. On the date of your blind lunch you will be matched with a colleague. You can check this out on your dashboard, his or her photo will appear on the scheduled lunch icon. You should then get in touch and discuss where and when to meet.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question3" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question3" name="question3" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> How do register?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question3">
-                <div class="panel-body1">
-                  <p>
-                  Registration is very simple. Just press the “Sign Up” button on the Luncher website. Then, fill out the fields and upload a picture of yourself to set up your profile. In case you forgot your password, click on the “Forgot Password” button and follow the instructions.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question4" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question4" name="question4" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> How do I cancel a lunch?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question4">
-                <div class="panel-body1">
-                  <p>
-                  You can cancel your lunch by simply pressing the “cancel” button on your dashboard. Be sure to reach out to the person you matched with if you need to reschedule – you don’t want to be known for ghosting a potential new friend.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question5" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question5" name="question5" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> When does the next lunch take place?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question5">
-                <div class="panel-body1">
-                  <p>
-                  The dates on which lunches will happen will appear on your personal dashboard. On the day of a lunch event, a reminder will be sent out to all users by email.
-                  </p>
-                </div>
-              </div>
-            </div>
-              <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question6" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question6" name="question6" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> Do I need to install a software or app?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question6">
-                <div class="panel-body1">
-                  <p>
-                  Luncher is a “software as a service” solution hosted on our servers. That means, you do not need to install a software or app.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question7" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question7" name="question7" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> How secure is our data?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question7">
-                <div class="panel-body1">
-                  <p>
-                  We attach great importance to the security of your data and ensure this through a series of processes and measures. Each data transmission is encrypted.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading panel-heading-last accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question8" data-toggle="collapse">
-                <h4 class="panel-title">
-                <a href="#question8" name="question8" class="panel-head"></a>
-                <i class="fas fa-angle-down arrow"></i> Who do I contact in case I need help?
-                </h4>
-              </div>
-              <div class="panel-collapse collapse" id="question8">
-                <div class="panel-body1">
-                  <p>
-                  If you need help, you will find a contact person for each location on the website. If you have IT-specific questions, please contact Andrew Rogerson.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="banner-help">
-      <div class="layer"></div>
-      <div class="container text-center padded features teaser is-inverted">
-        <div class="h2 h text-center">create a network throughout your firm </div>
-      </div>
-    </div>
-    <section id="help">
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto text-center br-cust">
-            <h2 class="section-heading">Help</h2>
-            <p>Contact us if you have issues using the app or any general questions. </p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
-            <div class="mx-auto" id="help-pic">
-              <a href="mailto:help@golunch.net" id="mail-to"><img class="img-circle" id="help-contact" src="https://images.unsplash.com/photo-1530513237527-2bec4fad76db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=900&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=94d24ec6cf80d976e07b5df42cc79eb9">
-              <h4 class="cust-sup">Maxi Mustermann</h4>
-              <p class="description-lp">Customer Support</p>
-              </a>
-            </div>
+  </div>
+</header>
 
-          </div>
+<span class="anchor" id="how-it-works"></span>
+  <section>
+    <div class="container text-center padded features">
+      <h2 class="section-heading">How it works</h2>
+      <div class="row">
+        <p class="description col-md-8 col-md-offset-2">
+          Go Lunch works like a digital lottery - It automatically selects two people from different departments and matches them for a lunch date. All it takes is three steps...
+        </p>
+      </div>
+      <div class="row overview-landing-page">
+        <div class="col-xs-12 col-sm-4">
+          <i class="description-icon far fa-edit fa-3x"></i>
+          <h3>Register</h3>
+          <p class="description">Register online and set up your profile in the dashboard.</p>
         </div>
-        <div class="col-xs-12 col-sm-12">
-          <div class="more_info">
-            <h1></h1>
-          </div>
-
+        <div class="col-xs-12 col-sm-4">
+          <i class="description-icon far fa-calendar-alt fa-3x cirlce"></i>
+          <h3>Pick a date</h3>
+          <p class="description">Schedule a lunch from the list of dates offered.</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <i class="description-icon fa fa-3x far fa-handshake cirlce"></i>
+          <h3>Meet new people</h3>
+          <p class="description">Get to know the colleague you have been matched with.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+
+<div class="banner-lp">
+  <div class="container text-center padded features teaser is-inverted">
+    <div class="h2 h text-center">Let's change the work place, one lunch at a time.</div>
+  </div>
+</div>
+
+<span class="anchor" id="benefits"></span>
+<section>
+  <div class="container text-center padded features">
+    <h2 class="section-heading">Why should I join?</h2>
+    <div class="row">
+      <p class="description col-md-8 col-md-offset-2">The bigger the company we work for, the less we know what is going on in other departments. But no worries. Casual meetings can improve fruitful collaborations and empathy for our colleagues.</p>
+    </div>
+    <div class="row overview-landing-page">
+      <div class="col-xs-12 col-sm-4">
+        <i class="description-icon far fa-3x  fa-lightbulb"></i>
+        <h3>Be part of innovation</h3>
+        <p class="description">Support collective intelligence and exchange your knowledge.</p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <i class="description-icon fas fa-3x fa-rocket"></i>
+        <h3>Grow as a person</h3>
+        <p class="description">Get to know new talents and develop as a role model.</p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <i class="description-icon far fa-3x fa-smile"></i>
+        <h3>Have fun</h3>
+        <p class="description">Enjoy the lunch with one of your colleagues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner-lp" id="banner-background-add">
+  <div class="container text-center padded features teaser is-inverted">
+    <div class="h2 h text-center">Turn your lunch break into a fun time with colleagues.</div>
+  </div>
+</div>
+
+<span class="anchor" id="faq"></span>
+<section>
+  <div class="container padded features">
+    <h2 class="h2 h text-center">Frequently Asked Questions</h2>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel-group"  id="faqAccordion">
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question0" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question0" name="question0" class="panel-head"></a>
+              Why should we use Go Lunch?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question0" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                The bigger the company, the less we know what is going on in departments outside of our own sphere. It’s simple to settle for the status quo – lunch with the same people, or worse, the very sad lunch at your desk. We communicate with the same people, have lunch with the same people, and talk to the same people every day. The result?  A lack of knowledge exchange and friendship between departments, which often times leads to a “silo mentality” and can block the flow of innovation. Regular casual meetings will improve the communication between departments and might lead to new collaborations and projects. And, last but not least, you can meet new people! Who knows? You might even meet your new best friend!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question1" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question1" name="question1" class="panel-head"></a>
+              I’m interested! Tell me why I should sign up today.
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question1" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                Besides the general advantage of getting to know other colleagues and make new friends, Luncher will offer support to us on challenges we are currently facing. How? Well, here are a few examples:
+              </p>
+              <p>
+                The best ideas emerge when different perspectives are shared. Open-ended discussions between employees from different departments and hierarchy levels provide a good platform for the development of creative thoughts. Meeting new people helps us understand each other better and expands our horizons – Luncher can offer us a way to connect, learn, and grow from one another.
+              </p>
+              <p>
+                For new employees, it can be intimidating to start anew in a new place. We’ve all been there before.  Not only is it  important to establish a network quickly within the company, it’s essential to have an understanding of the responsibilities and challenges of different departments. Better cross-department understanding is an essential part of a successful integration. The benefits of Luncher aren’t limited to professional development – it’s also designed to help us meet new people in the hopes of turning acquaintances into friends.,  New  jobs are often accompanied with relocation to a new city. The social aspect of life like making friends and acquaintances has to be completely rebuilt in a brand new place. With Luncher meeting new people on a regular basis (i.e. over lunch or for an after-work beer) can help make that process a little less scary.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question2" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question2" name="question2" class="panel-head"></a>
+              How do I schedule a lunch?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question2" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                You can schedule a lunch on your personal dashboard when you are logged in. Click on the button 'Schedule Luncher' and select a date and location. On the date of your blind lunch you will be matched with a colleague. You can check this out on your dashboard, his or her photo will appear on the scheduled lunch icon. You should then get in touch and discuss where and when to meet.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question3" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question3" name="question3" class="panel-head"></a>
+              How do register?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question3" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                Registration is very simple. Just press the “Sign Up” button on the Luncher website. Then, fill out the fields and upload a picture of yourself to set up your profile. In case you forgot your password, click on the “Forgot Password” button and follow the instructions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question4" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question4" name="question4" class="panel-head"></a>
+              How do I cancel a lunch?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question4" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                You can cancel your lunch by simply pressing the “cancel” button on your dashboard. Be sure to reach out to the person you matched with if you need to reschedule – you don’t want to be known for ghosting a potential new friend.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question5" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question5" name="question5" class="panel-head"></a>
+              When does the next lunch take place?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question5" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                The dates on which lunches will happen will appear on your personal dashboard. On the day of a lunch event, a reminder will be sent out to all users by email.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question6" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question6" name="question6" class="panel-head"></a>
+              Do I need to install a software or app?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question6" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                Go Lunch is a “software as a service” solution hosted on our servers. That means, you do not need to install a software or app.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question7" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question7" name="question7" class="panel-head"></a>
+              How secure is our data?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question7" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                We attach great importance to the security of your data and ensure this through a series of processes and measures. Each data transmission is encrypted.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading accordion-toggle question-toggle collapsed" data-parent="#faqAccordion" data-target="#question8" data-toggle="collapse" aria-expanded="false">
+            <h4 class="panel-title">
+              <a href="#question8" name="question8" class="panel-head"></a>
+              Who do I contact in case I need help?
+            </h4>
+          </div>
+          <div class="panel-collapse collapse" id="question8" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body-faq">
+              <p>
+                If you need help, you will find a contact person for each location on the website. If you have IT-specific questions, please contact Andrew Rogerson.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner-help">
+  <div class="container text-center padded features teaser is-inverted">
+    <div class="h2 h text-center">Build an incredible network within your company.</div>
+  </div>
+</div>
+
+<span class="anchor" id="help"></span>
+<section>
+  <div class="container text-center padded features">
+    <h2 class="section-heading">Need help?</h2>
+    <p class="description col-md-8 col-md-offset-2">Contact us if you have issues using the app or any general questions. </p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-0 help-card">
+        <div class="col-xs-6 col-sm-3">
+          <a href="mailto:help@golunch.net" id="mail-to"><img class="img-circle" id="help-contact" src="https://images.unsplash.com/photo-1530513237527-2bec4fad76db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=900&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=94d24ec6cf80d976e07b5df42cc79eb9">
+            <h5>Sandra Schröder</h5>
+          </a>
+          <p>Customer Support</p>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <a href="mailto:help@golunch.net" id="mail-to"><img class="img-circle" id="help-contact" src="http://www.ishootshows.com/wp-content/uploads/2008/07/todd-owyoung-portrait-145238_COB8628-square-600px.jpg">
+            <h5>Thomas Müller</h5>
+          </a>
+          <p>Lunch Support</p>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <a href="mailto:help@golunch.net" id="mail-to"><img class="img-circle" id="help-contact" src="https://www.headshotsnyc.com/wp-content/uploads/ngg_featured/Linked-in-crop-1.jpg">
+            <h5>Sebastian Schneider</h5>
+          </a>
+          <p>Company Support</p>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <a href="mailto:help@golunch.net" id="mail-to"><img class="img-circle" id="help-contact" src="https://static1.squarespace.com/static/5a061154d74cff1fd30fb730/t/5a25ca4971c10bc878729c2d/1512426082558/CH-Portrait-Square.jpg">
+            <h5>Julia Ernst</h5>
+          </a>
+          <p>Profile Support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 

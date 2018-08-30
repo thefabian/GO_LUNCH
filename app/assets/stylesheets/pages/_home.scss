@@ -1,9 +1,7 @@
 // Specific CSS for your home-page
-header.masthead {
-  padding-top: 30px;
-  height: calc(800px - 70px - 100px);
+header.banner {
+  height: calc(100vh - 70px);
   background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url("https://images.unsplash.com/photo-1523029887627-f6c9879eacaf?ixlib=rb-0.3.5&s=39f69619734a85da8461e72ba749943e&auto=format&fit=crop&w=1050&q=80");
-  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,232 +10,177 @@ header.masthead {
   justify-content: center;
   text-align: center;
   display: flex;
-}
-
-
-header.masthead hr {
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-}
-
-header.masthead h1 {
-  font-size: 4rem;
   color: white;
-
 }
-
-header.masthead p {
-  font-weight: 300;
+header.banner p {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin: 0 0 13.5px;
 }
-
-
+header.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+header.headline {
+  display: block;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+header.content-header {
+  padding-bottom: 30px;
+}
 .btn-primary {
   border: 0px !important;
 }
-
 .btn-primary:hover {
   border: 1px solid #fff !important;
 }
-
-#btn-landing {
-  margin-top: 160px;
-  color: #fff !important;
-  background-color: rgba(255,255,255, 0.0) !important;
-  width: 260px;
-  height: 58px;
+#btn-banner {
+  margin-top: 30px;
+  width: 250px;
+  height: 50px;
   text-align: center;
   vertical-align: center;
   text-transform: uppercase;
   background-color: transparent;
   letter-spacing: 2px;
-  justify-content: center;
-  padding-bottom: 21px !important;
-  padding-top: 20px !important;
-  padding-left: 3rem !important;
-  padding-right: 3rem !important;
+  padding-top: 14px;
 }
-
-#btn-landing:hover {
+#btn-banner:hover {
   transition: 1.3s !important;
   background-color: #fff !important;
   color: #484848 !important;
   border: 1px solid #fff !important;
 }
-
-.banner-content {
-  padding: px;
-  border: 0px solid white !important;
-  opacity: 0.95;
+.padded {
+  padding-top: 4em;
+  padding-bottom: 4em;
 }
-
-.banner-content:hover {
-  opacity: 0.95;
-  cursor: pointer;
-  border: 0px !important;
+.overview-landing-page {
+  padding-top: 30px;
 }
-
-
+.description-icon {
+ width: 100px;
+ height: 100px;
+ border: 3px solid #469AE0;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #469AE0 !important;
+ margin-left: 36%;
+}
 .banner-lp {
-    color: white;
-    text-align: center;
-    min-height: 300px;
-    height: 700px;
-    width: 100%;
-    background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1508834633996-7ca4bc707cf8?ixlib=rb-0.3.5&s=4baedd8ba171668fa44dee512a37cb25&auto=format&fit=crop&w=1030&q=80);
-    background-position: top center;
-    background-size: cover !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
+  color: white;
+  text-align: center;
+  min-height: 300px;
+  height: 600px;
+  background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1508834633996-7ca4bc707cf8?ixlib=rb-0.3.5&s=4baedd8ba171668fa44dee512a37cb25&auto=format&fit=crop&w=1030&q=80);
+  background-position: top center;
+  background-size: cover !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
 }
-
-.mx-auto h1{
-  letter-spacing: 3px;
-  font-size: 50px !important;
+#banner-background-add {
+  background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1525078459500-9e1a0dd292ab?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=1754ee6a32c758d304f55414411c8864) !important;
 }
-
-.mx-auto h4{
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: normal;
+.h2 {
+  font-size: 48px;
 }
-
-.section-heading {
-  letter-spacing: 3px;
+.h {
+  display: block;
+  margin: 0 0 20px;
+  font-weight: bold;
   text-transform: uppercase;
-  color: #484848;
 }
-
-.banner-faq {
-    color: white;
-    text-align: center;
-    min-height: 300px;
-    height: 700px;
-    width: 100%;
-    background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1fe18e6fdfabd9a43474c9ad3d2255b4&auto=format&fit=crop&w=1050&q=80);
-    background-position: top center;
-    background-size: cover !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
+.teaser {
+  position: relative;
+  max-width: 650px;
+  z-index: 2;
+  display: inline-block;
 }
-
+.section-heading {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: black;
+  display: block;
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 48px;
+}
 .banner-help {
-    color: white;
-    text-align: center;
-    min-height: 300px;
-    height: 700px;
-    width: 100%;
-    background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1418225162054-0f773a996f9e?ixlib=rb-0.3.5&s=3a2bd5572432b45991f5059ab2b58ad7&auto=format&fit=crop&w=1058&q=80);
-    background-position: top center;
-    background-size: cover !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
+  color: white;
+  text-align: center;
+  min-height: 300px;
+  height: 600px;
+  width: 100%;
+  background-image: linear-gradient(-225deg, rgba(0,36,61,0.6) 50%, rgba(0,36,61,0.6) 50%), url(https://images.unsplash.com/photo-1418225162054-0f773a996f9e?ixlib=rb-0.3.5&s=3a2bd5572432b45991f5059ab2b58ad7&auto=format&fit=crop&w=1058&q=80);
+  background-position: top center;
+  background-size: cover !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
 }
-
-.br-cust {
-  margin-bottom: 60px;
-}
-
-.description-lp {
+.description {
   font-weight: normal;
-  color: #484848;
 }
-
-#benefits {
-  color: #484848 !important;
-  height: calc(900px - 70px - 100px);
-  margin-bottom: 70px;
+.panel-group {
+  margin-bottom: 27px;
 }
-
-#how-it-works {
-  padding-top: 70px;
-  color: #484848 !important;
-  height: calc(800px - 70px - 100px);
+.panel-default {
+  border-color: #ddd !important;
 }
-
-#faq {
-  color: #484848 !important;
-  height: calc(800px - 70px - 100px);
-  margin-bottom: 70px;
-  padding-top: 70px;
-}
-
-#help {
-  padding-top: 70px;
-  color: #484848 !important;
-  height: calc(800px - 70px - 100px);
-}
-
-.panel-body1 {
-  color: #ffffff !important;
-  background-color: #469AE0;
-  text-align: left;
-  padding: 10px;
-}
-
-.panel-title {
-  color: #484848 !important;
-  text-align: left;
-}
-
 .panel {
-  border: 0px !important;
+  margin-bottom: 27px;
   box-shadow: none;
 }
-
-.panel-heading {
-  background-color: #f4f4f4 !important;
-  border-bottom: 1px solid #e0e0e0 !important;
- }
-
+.panel-body-faq {
+  padding: 15px;
+}
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 21px;
+  color: inherit;
+}
 .panel-heading-last {
   background-color: #f4f4f4 !important;
   border-bottom: 0px solid #e0e0e0 !important;
   background-color: #f4f4f4 !important;
   border-bottom: 1px solid #e0e0e0 !important;
 }
-
-.fas.fa-angle-down {
-  float: right !important;
+.panel-heading.accordion-toggle .panel-title:after {
+  font-family: 'Glyphicons Halflings';
+  content: "\e113";
+  float: right;
 }
-
-#desc1 {
-  padding-top: 70px;
-  padding-bottom: 35px;
+.panel-heading.accordion-toggle.collapsed .panel-title:after {
+  content: "\e114";
 }
-
-.cust-sup {
-  color: #469AE0 !important;
+.help-card {
+  margin-top: 20px;
 }
-
 #help-contact {
+  margin-top: 10px;
   height: 100px;
   width: 100px;
 }
-
 #mail-to:hover {
   text-decoration: none !important;
   img {
@@ -247,56 +190,27 @@ header.masthead p {
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
   }
-  h4 {
-    // color: black !important;
-  }
-  p {
-    // color: black !important;
-  }
 }
-
 .panel-title {
   cursor: pointer;
 }
-
-
-.fat {
-   width: 100px;       width: 100px;
-   height: 100px;      height: 100px;
-   border: 3px solid #469AE0;      border: 3px solid #469AE0;
-   border-radius: 50%;       border-radius: 50%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   color: #469AE0 !important;
-   position: absolute;
-   top: -30px;
-   left: 50%;
-   transform: translateX(-50%);
- }
-
- .fa-smile {
-   color: #469AE0 !important;
-   width: 100px;
-   height: 100px;
-   border: 3px solid #469AE0;
-   border-radius: 50%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: absolute;
-   top: -30px;
-   left: 50%;
-   transform: translateX(-50%);
- }
-
- .mx-auto {
-   padding-top: 70px;
- }
-
- #help-pic {
-   padding-top: 0px !important;
- }
+.fa-edit {
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+.fa-rocket {
+  padding-right: 5px;
+  padding-top: 5px;
+}
+.anchor{
+  display: block;
+  height: 70px; /*same height as header*/
+  margin-top: -70px; /*same height as header*/
+  visibility: hidden;
+}
+.body {
+  color: #000000
+}
 
 
 
