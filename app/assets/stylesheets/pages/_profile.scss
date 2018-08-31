@@ -25,6 +25,14 @@
   margin: 0px !important;
 }
 
+.fa-pen:before {
+  color: #E9E9E9;
+}
+
+.fa-edit:before {
+  color: #E9E9E9;
+}
+
 .pen:hover {
   color: #469AE0;
 }
@@ -333,7 +341,6 @@ ul, ol {
   .btn {
     width: 100%;
     padding: 10px;
-    font-weight: bold;
   }
 }
 
@@ -362,7 +369,6 @@ ul, ol {
   .btn {
     width: 100%;
     padding: 10px;
-    font-weight: bold;
   }
 }
 
@@ -435,4 +441,12 @@ ul, ol {
   top: 10px !important;
   right: 10px !important;
 
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.fa-arrow-left:before {
+  margin-right: 5px;
 }

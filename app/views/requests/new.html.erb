@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="form-post">
-    <h1>New Lunch Request</h1>
+  <div class="form-post" id="form-post-request">
+    <h1>Arrange a New Lunch</h1>
     <%= simple_form_for [@request] do |t| %>
     <div class="row">
       <div class="col-xs-6 form-match" id="input-req">
@@ -32,7 +32,7 @@
         <% end %>
       </div>
     </div>
-    <%=  t.submit "Request Lunch", class: "btn btn-primary btn-block", id: "btt" %>
+    <%=  t.submit "Find lunch", class: "btn btn-primary btn-block", id: "btt" %>
     <% end %>
   </div>
 </div>
