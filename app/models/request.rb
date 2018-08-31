@@ -1,7 +1,7 @@
 class Request < ApplicationRecord
   belongs_to :user
   belongs_to :lunch, optional: true
-  has_many :availabilities
+  has_many :availabilities, dependent: :destroy
   # has_one :lunch_as_first, class_name: 'Lunch', foreign_key: 'request_1_id'
   # has_one :lunch_as_second, class_name: 'Lunch', foreign_key: 'request_2_id'
 
