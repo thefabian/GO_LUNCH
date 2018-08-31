@@ -114,7 +114,7 @@ raj = Profile.create!(
 
 bernadette = Profile.create!(
   first_name: 'Bernadette',
-  last_name: 'Rostenkowski-Wolowitz',
+  last_name: 'Wolowitz',
   company: company,
   department_id: dp5.id,
   job_title: "Microbiologist",
