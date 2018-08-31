@@ -38,6 +38,29 @@ p.header-line span {
   padding: 0 15px;
 }
 
+p.header-line-2 span {
+  background: #F4F4F4;
+  padding: 0 0px !important;
+}
+
+p.header-line-2 {
+  position: relative;
+  z-index: 1;
+}
+
+p.header-line-2:before {
+  border-top: 1px solid #ced0d0;
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
 .form-control {
   background-color: #FFFFFF;
   background-image: none;

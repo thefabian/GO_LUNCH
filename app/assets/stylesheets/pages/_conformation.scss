@@ -1,18 +1,24 @@
 .backgroundconforamtion {
-  background-image: url("https://images.unsplash.com/photo-1517870662726-c1d98ee36250?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d7a6694130f46dc58587231975022d70&auto=format&fit=crop&w=2250&q=80");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
+#lbuddy {
+  h2{
+  font-size: 25px !important;
+  color: #484848;
+  padding: 0px;
+  margin: 0px;
+  }
+}
 
 .headline{
   color: white;
 }
 
 .conformationcontainer {
-  width: 400px;
-  margin: 120px auto 120px;
+  margin: 90px auto 90px;
   background-color: #fff;
   padding: 0 29px 29px;
   border-radius: 6px;
