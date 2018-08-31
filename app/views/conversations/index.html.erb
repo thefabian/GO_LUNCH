@@ -6,9 +6,9 @@
     <ul class="list-group list-group-flush">
       <h3 style="text-transform: uppercase;">recent messages</h3>
       <hr>
-      <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).limit(10).each do |conversation| %>
-        <div class="row message-cards avatar-user">
-          <div class="">
+      <div class="messages-wrapper-scroll" style="overflow-y: scroll; height: 400px;">
+        <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).limit(10).each do |conversation| %>
+          <div class="message-cards avatar-user">
             <% if conversation.receiver == current_user %>
               <%= cl_image_tag(conversation.sender.profile.photo, class: 'avatar', style:"height: 90px; width: 90px; position: absolute; top: 10px; left: 50px; border: 2px solid #489AE0 !important;", transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
               <div class="caption">
@@ -43,11 +43,11 @@
                   <i class="fas fa-angle-right"></i>
                 <% end %>
               </div>
-              <% end %>
-            </div>
+            <% end %>
           </div>
-        <hr>
-    <% end %>
+          <hr>
+        <% end %>
+      </div>
     </ul>
   </div>
   <div class="col-sm-4" style="border-left: 1px solid #EEEEEE; min-height: 516px;">
