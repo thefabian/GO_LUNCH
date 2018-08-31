@@ -12,9 +12,9 @@ Lunch.destroy_all
 Profile.destroy_all
 Department.destroy_all
 Location.destroy_all
-Company.destroy_all
-Conversation.destroy_all
 Message.destroy_all
+Conversation.destroy_all
+Company.destroy_all
 User.destroy_all
 
 puts "Create users..."
@@ -67,6 +67,8 @@ leonard = Profile.create!(
   department_id: dp1.id,
   job_title: "Experimental Physicist",
   location: 'Pasadena',
+  latitude: 34.1477849,
+  longitude: -118.1445155,
   description: 'Leonard Hofstadter is the best friend and former roommate of Sheldon Cooper, husband of Penny Hofstadter, and he works as a experimental physicist doing research at the California Institute of Technology with Sheldon, Howard, and Raj.',
   user_id: user_1.id,
   remote_photo_url: "https://pbs.twimg.com/profile_images/2654852680/87ee5ed912ea7364a29a380be9b22285.jpeg",
@@ -80,6 +82,8 @@ sheldon = Profile.create!(
   department_id: dp2.id,
   job_title: "Theoretical Physicist",
   location: 'Pasadena',
+  latitude: 34.1477849,
+  longitude: -118.1445155,
   description: "Sheldon Cooper is Leonard Hofstadter's best friend and former roommate, Amy Farrah Fowler's husband and he works as a theoretical physicist doing research at the California Institute of Technology with Leonard, Raj, and Howard.",
   user_id: user_2.id,
   remote_photo_url: "https://www.jokeme.fr/images/sheldon-cooper.jpg",
@@ -93,6 +97,8 @@ howard = Profile.create!(
   department_id: dp4.id,
   job_title: "Aerospace Engineer",
   location: 'Pasadena',
+  latitude: 34.1477849,
+  longitude: -118.1445155,
   description: "Howard Wolowitz is Bernadette Rostenkowski's husband, now a father, and he works as an aerospace engineer at the California Institute of Technology with Leonard, Sheldon, and Raj.",
   user_id: user_3.id,
   remote_photo_url: "http://www.postavy.cz/foto/howard-wolowitz-foto.jpg",
@@ -106,6 +112,8 @@ raj = Profile.create!(
   department_id: dp6.id,
   job_title: "Astrophysicist",
   location: 'Pasadena',
+  latitude: 34.1477849,
+  longitude: -118.1445155,
   description: 'Rajesh "Raj" Koothrappali works as a astrophysicist doing research at the California Institute of Technology sometimes working with Leonard, Sheldon, and Howard.',
   user_id: user_4.id,
   remote_photo_url: "https://pbs.twimg.com/profile_images/566327713707749376/KtScs-wm_400x400.jpeg",
@@ -119,6 +127,8 @@ bernadette = Profile.create!(
   department_id: dp5.id,
   job_title: "Microbiologist",
   location: 'Pasadena',
+  latitude: 34.1477849,
+  longitude: -118.1445155,
   description: "Bernadette Rostenkowski-Wolowitz is Howard Wolowitz's wife and a new mother. She works at as a microbiologist at Zangen with Penny and was also once a waitress with Penny at the Cheesecake Factory.",
   user_id: user_5.id,
   remote_photo_url: "http://www.postavy.cz/foto/bernadette-rostenkowski-foto.jpg",
@@ -132,6 +142,8 @@ amy = Profile.create!(
   department_id: dp3.id,
   job_title: "Neurobiologist",
   location: 'Pasadena',
+  latitude: 34.1477849,
+  longitude: -118.1445155,
   description: "Amy Farrah Fowler is Sheldon Cooper's girlfriend and a neurobiologist currently working at Caltech.",
   user_id: user_6.id,
   remote_photo_url: "http://www.postavy.cz/foto/amy-farrah-fowler-foto.jpg",
