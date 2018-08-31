@@ -16,14 +16,14 @@
           <h3 id="profile-name"><%= @profile.first_name %> <%= @profile.last_name  %></h3>
         </div>
         <ul class="list-group" id="top-border">
-          <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p><%= @profile.company.name %></p></li>
+          <li class="list-group-item text-muted" contenteditable="false" id="company-name"><p style="line-height: 30px !important;"><%= @profile.company.name %></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">location</strong></span><span id="right-side"><%= @profile.location%></span></p></li>
-          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">job title</strong></span><span id="right-side"> <%= @profile.job_title %></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">department </strong></span><span id="right-side"><%= @profile.department.department %></span></p></li>
+          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">job title</strong></span><span id="right-side"> <%= @profile.job_title %></span></p></li>
           <li class="list-group-item text-muted" id="top-border"><span><p><strong class="group-name"></strong></span><span id="right-side"></span></p></li>
-          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunch typ</strong></span><span id="right-side">outside</span></p></li>
-          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">lunches</strong></span><span id="right-side"> 10</span></p></li>
-          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">messages</strong></span><span id="right-side">3</span></p></li>
+          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">preferred lunch type</strong></span><span id="right-side">Restaurant</span></p></li>
+          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">total lunches</strong></span><span id="right-side"> 10</span></p></li>
+          <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">total messages</strong></span><span id="right-side">3</span></p></li>
           <li class="list-group-item text-muted" id="top-border"><span><p><strong class="group-name"></strong></span><span id="right-side"></span></p></li>
           <li class="list-group-item text-muted"><span id="company-details"><p><strong class="group-name">description</strong></span><span id="right-side"></span></p></li>
           <p id="descr"><%=@profile.description%></p>
@@ -60,10 +60,10 @@
       <h1>Your Next Lunch Date</h1>
       <h4>
         <%= current_user.next_lunch.date.strftime("%a %b %d") %>
-        | LUNCH TYPE
+        |
+        <%= current_user.next_lunch.location %>
+        |
         <%= current_user.next_lunch.kind %>
-        | Ask
-        <%= current_user.next_lunch.other_user(current_user).profile.first_name %>
       </h4>
       <div class="col-xs-12 col-md-6 col-md-offset-3">
         <div class="review-cards">
@@ -83,7 +83,7 @@
                       <div class="panel-collapse collapse" id="question0">
                         <div class="panel-lunch">
                           <h4><%= current_user.next_lunch.other_user(current_user).profile.job_title %></h4>
-                          <p><%= current_user.next_lunch.other_user(current_user).profile.department_id %></p>
+                          <p><%= current_user.next_lunch.other_user(current_user).profile.department.department %></p>
                           <hr id="hr-conf">
                           <p id="descr"><%=@profile.description%><%= current_user.next_lunch.other_user(current_user).profile.description %></p>
                         </div>

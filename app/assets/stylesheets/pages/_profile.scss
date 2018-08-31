@@ -105,6 +105,7 @@
 }
 
 #company-name {
+  line-height: 30px !important;
   p {
     font-size: 22px;
     margin-bottom: 0px;
@@ -414,6 +415,7 @@ ul, ol {
   white-space: nowrap;
   max-width: 100%;
   font-size: 16px;
+  text-align: left;
   // padding-bottom: 38px;
   // border-bottom: 1px solid #ced0d0;
   // overflow: hidden;
