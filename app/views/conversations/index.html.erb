@@ -4,42 +4,67 @@
   <div class="row messaging inboxcontainer">
     <div class="col-sm-8">
     <ul class="list-group list-group-flush">
-      <h3>recent messages</h3>
-      <% @conversations.each do |conversation| %>
-        <li class="list-group-item" data-conversation-id="<%= conversation.id %>">
-          <%= link_to conversation_messages_path(conversation) do %>
-          <% if conversation.receiver == current_user %>
-            <%= cl_image_tag(conversation.sender.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
-            <%= conversation.sender.profile.first_name %>
-
-            <%= conversation.sender.profile.last_name %>
+      <h3 style="text-transform: uppercase;">recent messages</h3>
+      <hr>
+      <% Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id).limit(10).each do |conversation| %>
+        <div class="row message-cards avatar-user">
+          <div class="">
+            <% if conversation.receiver == current_user %>
+              <%= cl_image_tag(conversation.sender.profile.photo, class: 'avatar', style:"height: 90px; width: 90px; position: absolute; top: 10px; left: 50px; border: 2px solid #489AE0 !important;", transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+              <div class="caption">
+                <h3 style="left: 120px !important;">
+                  <%= conversation.sender.profile.first_name  + " " + conversation.sender.profile.last_name %>
+                </h3>
+                <p style="left: 120px !important;">
+                  <% if conversation.messages.last&.user == current_user %>
+                  <%= "You: " + conversation.messages.last.body %>
+                  <% else %>
+                  <%= conversation.messages.last&.body %>
+                  <% end %>
+                </p>
+                 <%= link_to conversation_messages_path(conversation) do %>
+                  <i class="fas fa-angle-right"></i>
+                <% end %>
+              </div>
             <% else %>
-             <%= cl_image_tag(conversation.receiver.profile.photo, class: 'avatar', transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
-            <%= conversation.receiver.profile.first_name %>
-
-            <%= conversation.receiver.profile.last_name %>
-            <% end %>
-            <i class="far fa-edit"></i>
-          <% end %>
-          <% if !conversation.unread_message_count(current_user).zero? %>
-            <span class="badge far fa-envelope"><span style="font-family:Open Sans" ><%= conversation.unread_message_count(current_user) %></span>
-          <% end %>
-        </li>
-      <% end %>
+              <%= cl_image_tag(conversation.receiver.profile.photo, class: 'avatar', style:"height: 90px; width: 90px; position: absolute; top: 10px; left: 50px; border: 2px solid #489AE0 !important;" ,transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+              <div class="caption">
+                <h3 style="left: 120px !important;">
+                  <%= conversation.receiver.profile.first_name  + " " + conversation.receiver.profile.last_name %>
+                </h3>
+                <p style="left: 120px !important;">
+                  <% if conversation.messages.last&.user == current_user %>
+                  <%= "You: " + conversation.messages.last.body %>
+                  <% else %>
+                  <%= conversation.messages.last&.body %>
+                  <% end %>
+                </p>
+                <%= link_to conversation_messages_path(conversation) do %>
+                  <i class="fas fa-angle-right"></i>
+                <% end %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        <hr>
+    <% end %>
     </ul>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4" style="border-left: 1px solid #EEEEEE; min-height: 516px;">
     <div class="form-group">
-      <h3>your colleagues</h3>
-      <ul id="users" class="list-group list-group-flush">
-      <% @users.each do |user| %>
-        <li class="list-group-item" data-searchstring="<%= user.email %>" >
-
-          <%= link_to (user.profile.first_name + " " + user.profile.last_name), conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %>
-          <i class="far fa-edit"></i>
-        </li>
-      <% end %>
-    </ul>
+      <h3 style="text-transform: uppercase;">your colleagues</h3>
+      <div >
+        <hr>
+        <ul id="users" class="list-group list-group-flush">
+        <% @users.each do |user| %>
+          <li class="list-group-item" data-searchstring="<%= user.email %>" style="padding: 0px; border-color: #fff;">
+            <%= cl_image_tag(user.profile.photo, class: 'avatar', id:"navbar-wagon-menu", style:"margin-right: 10px; margin-left: 10px;", transformation: [{ width: 1200, height: 1200, gravity: "face", radius: "max", crop: "crop"}]) %>
+            <%= link_to (user.profile.first_name + " " + user.profile.last_name), conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %>
+          </li>
+          <hr style="margin: 3px;">
+        <% end %>
+      </ul>
+    </div>
     </div>
   </div>
 </div>
