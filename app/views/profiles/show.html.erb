@@ -134,10 +134,10 @@
               <%= conversation.sender.profile.first_name  + " " + conversation.sender.profile.last_name %>
             </h3>
             <p>
-              <% if conversation.messages.last.user == current_user %>
+              <% if conversation.messages.last&.user == current_user %>
               <%= "You: " + conversation.messages.last.body %>
               <% else %>
-              <%= conversation.messages.last.body %>
+              <%= conversation.messages.last&.body %>
               <% end %>
             </p>
              <%= link_to conversation_messages_path(conversation) do %>
@@ -151,10 +151,10 @@
               <%= conversation.receiver.profile.first_name  + " " + conversation.receiver.profile.last_name %>
             </h3>
             <p>
-              <% if conversation.messages.last.user == current_user %>
+              <% if conversation.messages.last&.user == current_user %>
               <%= "You: " + conversation.messages.last.body %>
               <% else %>
-              <%= conversation.messages.last.body %>
+              <%= conversation.messages.last&.body %>
               <% end %>
             </p>
             <%= link_to conversation_messages_path(conversation) do %>
