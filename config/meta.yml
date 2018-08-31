@@ -1,0 +1,5 @@
+meta_product_name: "Go Lunch"
+meta_title: "Go Lunch - Up for something new? Set up a lunch with Go Lunch and meet awesome colleagues."
+meta_description: "Go Lunch began in 2018. We realized that it was near impossible for the individual employee to meet colleagues from different departments within their company. Today we're proud to empower individuals to build networks and improve the working atmosphere within their company and societies."
+meta_image: "cover_go_lunch.jpeg"             # should exist in `app/assets/images/`
+twitter_account: "@Gerbauhh"                  # required for Twitter Cards
